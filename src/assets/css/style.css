@@ -1325,38 +1325,3 @@ section {
         border: 1px solid #ccc;
     }
 }
-
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-
-#footer {
-    padding: 15px;
-    color: #f4f6fd;
-    font-size: 14px;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    z-index: 9999;
-    background: #040b14;
-}
-
-#footer .copyright {
-    text-align: center;
-}
-
-#footer .credits {
-    padding-top: 5px;
-    text-align: center;
-    font-size: 13px;
-    color: #eaebf0;
-}
-
-@media (max-width: 1199px) {
-    #footer {
-        position: static;
-        width: auto;
-        padding-right: 20px 15px;
-    }
-}

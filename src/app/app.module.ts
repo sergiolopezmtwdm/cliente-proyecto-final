@@ -18,6 +18,9 @@ import { AppRouterModule } from './app.route';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { FooterComponent } from './components/sections/footer/footer.component';
+import { XboxComponent } from './components/sections/xbox/xbox.component';
+import { PlayStationComponent } from './components/sections/play-station/play-station.component';
+import { PCComponent } from './components/sections/pc/pc.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -30,6 +33,9 @@ export function tokenGetter() {
     ExampleFormComponent,
     LoginComponent,
     CustomersComponent,
+    XboxComponent,
+    PlayStationComponent,
+    PCComponent,
     SidebarComponent,
     // CarritoComponent,
     // WishlistComponent,
