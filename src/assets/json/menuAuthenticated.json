@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Clientes",
+    "icon": "bx bx-user",
+    "route": "clientes/lista"
+  },
+  {
+    "title": "Códigos",
+    "icon": "bx bx-user",
+    "route": "codigos/lista"
+  },
+  {
+    "title": "Productos",
+    "icon": "bx bx-user",
+    "route": "productos/lista"
+  },
+  {
+    "title": "Ventas",
+    "icon": "bx bx-user",
+    "route": "ventas/lista"
+  }
+]

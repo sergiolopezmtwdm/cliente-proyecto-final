@@ -1,0 +1,92 @@
+ <!-- ======= Breadcrumbs ======= -->
+ <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Productos</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Productos</li>
+          <li>Nuevo</li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Breadcrumbs -->
+
+   <!-- ======= About Section ======= -->
+<section id="contact" class="contact">
+    <div class="container">      
+
+      <div class="section-title">
+        <h2>Nuevo Producto</h2>
+        <p></p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Titulo</label>
+                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" autocomplete="off" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Plataforma</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>-- Seleccionar --</option>                   
+                  </select>
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="name">Genero</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>-- Seleccionar --</option>                   
+                    </select>
+                    <div class="validate"></div>
+                  </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Clasificación</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>-- Seleccionar --</option>                   
+                  </select>
+                  <div class="validate"></div>
+                </div>                
+              </div>
+              <div class="row">
+                <div class="form-group col-md-2">
+                    <label for="name">Fecha Lanzamiento</label>
+                    <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" autocomplete="off" placeholder="2020-12-01" />
+                    <div class="validate"></div>
+                  </div>
+            
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlFile1">Imagen </label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <label for="name">Descripción</label>
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" autocomplete="off"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-right"><button type="submit">Guardar</button></div>
+              <div class="text-left"><button class="btn btn-md btn-info" type="button">Regresar Lista</button></div>
+            </form>
+          </div>
+      </div>    
+      
+    </div>
+  </section><!-- End About Section -->
+
+  

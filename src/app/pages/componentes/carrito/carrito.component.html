@@ -1,0 +1,247 @@
+<section id="carrito" class="skills section-bg">
+  <div class="container">
+
+    <div class="heigt-carrito">
+      <section class="breadcrumbs ">
+        <div class="container">
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Carrito</h2>
+          </div>
+        </div>
+      </section>
+      <!-- End Breadcrumbs -->
+
+      <section id="about" class="about">
+        <div class="container">
+
+          <div class="section-title">
+            <h2>Resumen de compra</h2>
+          </div>
+          <div class="row">
+            <!-- <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left"> -->
+            <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <!-- <th scope="col">#</th> -->
+                    <th scope="col">Artículo</th>
+                    <th scope="col">Plataforma</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <!-- <th scope="row">1</th> -->
+                    <td><a href="#">Cyberpunk 2077 XBOX</a></td>
+                    <td><i class="icon-Contenedor-Xbox" title="Xbox"></i></td>
+                    <td>1</td>
+                    <td>$2,077</td>
+                    <td><a href="#"><i class="bx bx-trash" title="Eliminar"></i></a>&nbsp;&nbsp;<a href="#"><i
+                          class="bx bx-time" title="Guardar para más tarde"></i></a></td>
+                  </tr>
+                  <tr>
+                    <!-- <th scope="row">2</th> -->
+                    <td><a href="#">Call of Duty: Black Ops Cold War PS4</a></td>
+                    <td><i class="icon-Contenedor-PS" title="PS"></i></td>
+                    <td>1</td>
+                    <td>$1,000</td>
+                    <td><a href="#"><i class="bx bx-trash" title="Eliminar"></i></a>&nbsp;&nbsp;<a href="#"><i
+                          class="bx bx-time" title="Guardar para más tarde"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left">
+              <!-- <div class="float-right">
+          <h3>Total: $3,077</h3>
+        </div> -->
+              <div class="float-right">
+                <!-- <h4>(2 Artículos)</h4> -->
+                <h3> Total: $3,077</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left">
+              <!-- <div class="col-md-12"> -->
+              <!-- ircompra -->
+              <div class="float-right">
+                <!-- class="btn btn-primary w3-green" -->
+                <button type="button" class="btn btn-primary w3-green" (click)="open(mymodal)"><span>Continuar
+                    al
+                    pago</span></button>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="section-title">
+            <h3>Guardados para más tarde</h3>
+            <!-- <div class="float-right">
+        <h3>Subtotal(2 productos): $3,077</h3>
+      </div> -->
+          </div>
+          <div class="row">
+            <!-- <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left"> -->
+            <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <!-- <th scope="col">#</th> -->
+                    <th scope="col">Artículo</th>
+                    <th scope="col">Plataforma</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <!-- <th scope="row">1</th> -->
+                    <td><a href="#">STAR WARS™: Squadrons PC</a></td>
+                    <td><i class="icon-Contenedor-PC" title="PC"></i></td>
+                    <td>1</td>
+                    <td>$900</td>
+                    <td><a href="#"><i class="bx bx-trash" title="Eliminar"></i></a>&nbsp;&nbsp;<a href="#"><i
+                          class="bx bxs-cart-add" title="Agregar al carrito"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <!-- <th scope="row">2</th> -->
+                    <td><a href="#">FIFA 21 PC</a></td>
+                    <td><i class="icon-Contenedor-PC" title="PC"></i></td>
+                    <td>1</td>
+                    <td>$1,100</td>
+                    <td><a href="#"><i class="bx bx-trash" title="Eliminar"></i></a>&nbsp;&nbsp;<a href="#"><i
+                          class="bx bxs-cart-add" title="Agregar al carrito"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section><!-- End About Section -->
+
+      <ng-template #mymodal let-modal>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- <ul class="nav nav-pills nav-fill">
+          <li class="nav-item active"><a class="nav-link" data-toggle="tab" href="#login">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#register">Registrarse</a></li>
+      </ul> -->
+
+          <!-- <div class="tab-content"> -->
+          <!-- <div id="login" class="tab-pane active"> -->
+          <!-- <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">Usuario</label>
+                      <input type="email" id="username" name="username" ngModel class="form-control"
+                          placeholder="User Name" required autofocus>
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your information with
+                          anyone
+                          else.</small>
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputPassword1">Contraseña</label>
+                      <input type="password" id="password" name="password" ngModel class="form-control"
+                          placeholder="Password" required>
+                  </div>
+                  <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary w3-green btn"
+                      (click)="modal.close('Save click')">Iniciar Sesión</button>
+              </form><br>
+              <a class="link forget-password">Olvidaste la contraseña?</a>
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button> -->
+          <!-- </div> -->
+          <!-- <div id="register" class="tab-pane fade"> -->
+          <form>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="name">Nombre</label>
+                  <input class="form-control" id="name" type="text" placeholder="Ingresa tu nombre completo">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="ccnumber">Número de la tarjeta de crédito</label>
+                  <div class="input-group">
+                    <input class="form-control" type="text" placeholder="0000 0000 0000 0000" autocomplete="email">
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-credit-card"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-4">
+                <label for="ccmonth">Mes</label>
+                <select class="form-control" id="ccmonth">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                </select>
+              </div>
+              <div class="form-group col-sm-4">
+                <label for="ccyear">Año</label>
+                <select class="form-control" id="ccyear">
+                  <option>2014</option>
+                  <option>2015</option>
+                  <option>2016</option>
+                  <option>2017</option>
+                  <option>2018</option>
+                  <option>2019</option>
+                  <option>2020</option>
+                  <option>2021</option>
+                  <option>2022</option>
+                  <option>2023</option>
+                  <option>2024</option>
+                  <option>2025</option>
+                </select>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label for="cvv">CVV/CVC</label>
+                  <input class="form-control" id="cvv" type="text" placeholder="123">
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w3-green btn">Pagar</button>
+          </form>
+          <!-- </div> -->
+          <!-- </div> -->
+        </div>
+      </ng-template>
+    </div>
+
+  </div>
+</section>

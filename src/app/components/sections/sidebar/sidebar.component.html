@@ -1,0 +1,122 @@
+<header id="header">
+  <div class="d-flex flex-column">
+    <div class="profile">
+      <!-- <img src="assets/img/call.jpg" alt="" class="img-fluid rounded-circle"> -->
+      <!-- <h1 class="text-light"><a href="index.html">Games MX</a></h1> -->
+      <h1 class="text-light"><a href="index.html"><span class="icon-Contenedor-Logo"></span></a></h1>
+      <!--<div class="social-links mt-3 text-center">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>-->
+    </div>
+    <div class="input-group">
+      <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar por..." aria-label="Search" aria-describedby="basic-addon2" (keyup.enter)="onclick_search(searchCriterio.value)" #searchCriterio>
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" (click)="onclick_search(searchCriterio.value)">
+          <i class="bx bx-search-alt-2"></i>
+        </button>
+      </div>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <!-- <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li> -->
+        <a routerLink="customers">Customer</a>
+        <li *ngFor="let menuItem of menuItems"><a [routerLink]="menuItem.route" routerLinkActive="active"><i class="{{menuItem.icon}}"></i><span>{{menuItem.title}}</span></a></li>
+
+        <li class="active"><a routerLink="home" href="#contenido"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <!-- <li class="active"><a href="#contenido"><i class="bx bx-home"></i> <span>Home</span></a></li> -->
+        <!-- <li><a href="#xbox"><i class="bx bx-user"></i> <span>Xbox</span></a></li> -->
+        <li><a href="#xbox"><i class="icon-Contenedor-Xbox"></i> <span>Xbox</span></a></li>
+        <!-- <li><a href="#playstation"><i class="bx bx-file-blank"></i> <span>Play Station</span></a></li> -->
+        <li><a href="#playstation"><i class="icon-Contenedor-PS"></i> <span>Play Station</span></a></li>
+        <!-- <li><a href="#pc"><i class="bx bx-book-content"></i>PC</a></li><br> -->
+        <li><a href="#pc"><i class="icon-Contenedor-PC"></i>PC</a></li>
+        <li><a href="#nintendo"><i class="icon-Contenedor-Nintendo"></i>Nintendo</a></li>
+        <br>
+        <!-- <li><a [routerLink]="carrito" routerLinkActive="active" href="carrito.html"><i class="bx bx-cart"></i>Carrito (0)</a></li> -->
+        <!-- <li><a href="carrito"><i class="bx bx-cart"></i>Carrito (0)</a></li> -->
+        <li><a routerLink="carrito" href="#carrito"><i class="bx bx-cart"></i>Carrito</a></li>
+        <!-- <li><a href="#carrito"><i class="bx bx-cart"></i>Carrito</a></li> -->
+        <br>
+        <li *ngIf="isUserAuthenticated()"><a href="#perfil"><i class="bx bx-book-content"></i>Mi Perfil</a></li>
+        <br>
+        <button class="btn btn-primary w3-red" type="submit" value="Submit" *ngIf="isUserAuthenticated()"
+          style="width: 85%;">
+          <li class="logout" (click)="logOut()">Logout</li>
+        </button>
+
+        <li><button type="button" class="btn btn-primary w3-red" (click)="open(mymodal)" style="width: 85%;"
+            *ngIf="!isUserAuthenticated()"><span>Iniciar
+              Sesión</span></button></li><br>
+        <li><button type="button" class="btn btn-primary w3-green" (click)="open(mymodal)" style="width: 85%;"
+            *ngIf="!isUserAuthenticated()"><span>Registrarse</span></button>
+        </li>
+      </ul>
+    </nav><!-- .nav-menu -->
+  </div>
+</header>
+
+
+<ng-template #mymodal>
+  <div class="modal-body">
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item active"><a class="nav-link" data-toggle="tab" href="#login">Iniciar Sesión</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#register">Registrarse</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="login" class="tab-pane active">
+        <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Usuario</label>
+            <input type="email" id="username" name="nick" ngModel class="form-control" placeholder="User Name"
+              required autofocus>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your information with
+              anyone
+              else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Password"
+              required>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary w3-green btn">Iniciar
+            Sesión</button>
+        </form><br>
+        <a class="link forget-password">Olvidaste la contraseña?</a>
+        <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button> -->
+      </div>
+      <div id="register" class="tab-pane fade">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputUser">Usuario</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="userHelp">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Correo Electronico</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword2">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <button type="submit" class="btn btn-primary w3-green btn">Registrarse</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>

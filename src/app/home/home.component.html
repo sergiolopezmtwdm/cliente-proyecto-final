@@ -1,0 +1,149 @@
+<!-- <br>
+<div *ngIf="isUserAuthenticated()" style="color:blue;">
+  <h2>
+    YOU ARE LOGGED IN
+  </h2>
+</div>
+
+<br>
+<ul>
+  <li><a routerLink="/customers">Customer</a></li>
+  <li *ngIf="!isUserAuthenticated()"><a routerLink="/login">Login</a></li>
+  <li *ngIf="isUserAuthenticated()"><a class="logout" (click)="logOut()">Logout</a></li>
+</ul>
+
+-->
+
+<!-- <button type="button" class="btn btn-primary w3-red" (click)="open(mymodal)" style="width: 85%;"
+  *ngIf="!isUserAuthenticated()"><span>Iniciar
+    Sesión</span></button>
+
+
+<ng-template #mymodal let-c="close" let-d="dismiss">
+  <div id="login" class="tab-pane active">
+    <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)" novalidate>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Usuario</label>
+        <input type="email" id="username" name="username" ngModel class="form-control" placeholder="User Name" required
+          autofocus>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your information with
+          anyone
+          else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Contraseña</label>
+        <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Password"
+          required>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary w3-green btn">Iniciar Sesión</button>
+    </form><br>
+    <a class="link forget-password">Olvidaste la contraseña?</a>
+  </div>
+</ng-template> -->
+
+
+<div id="main-carousel">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-interval="2000">
+        <img src="assets/img/1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-interval="2000">
+        <img src="assets/img/5.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-interval="2000">
+        <img src="assets/img/6.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="w3-card-4 w3-margin" style="width:95%">
+        <div class="w3-display-container w3-text-white">
+          <img src="assets/img/6.jpg" alt="Lights" style="width:100%">
+          <div class="w3-xlarge w3-display-bottomleft w3-padding">TITULO</div>
+        </div>
+        <div class="w3-row w3-black">
+          <div class="w3-third w3-center">
+            <h3>DESCRIPCIÓN</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="w3-card-4 w3-margin" style="width:95%">
+        <div class="w3-display-container w3-text-white">
+          <img src="assets/img/1.jpg" alt="Lights" style="width:100%">
+          <div class="w3-xlarge w3-display-bottomleft w3-padding">TITULO</div>
+        </div>
+        <div class="w3-row w3-black">
+          <div class="w3-third w3-center">
+            <h3>DESCRIPCIÓN</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="w3-card-4 w3-margin" style="width:95%">
+        <div class="w3-display-container w3-text-white">
+          <img src="assets/img/5.jpg" alt="Lights" style="width:100%">
+          <div class="w3-xlarge w3-display-bottomleft w3-padding">TITULO</div>
+        </div>
+        <div class="w3-row w3-black">
+          <div class="w3-third w3-center">
+            <h3>DESCRIPCIÓN</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="w3-card-4 w3-margin" style="width:95%">
+        <div class="w3-display-container w3-text-white">
+          <img src="assets/img/2.jpg" alt="Lights" style="width:100%">
+          <div class="w3-xlarge w3-display-bottomleft w3-padding">TITULO</div>
+        </div>
+        <div class="w3-row w3-black">
+          <div class="w3-third w3-center ">
+            <h3>DESCRIPCIÓN</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <componentes-xbox></componentes-xbox>
+  <componentes-play-station></componentes-play-station>
+  <componentes-pc></componentes-pc>
+</main>

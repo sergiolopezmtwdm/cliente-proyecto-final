@@ -1,0 +1,87 @@
+<!-- ======= Breadcrumbs ======= -->
+<section class="breadcrumbs">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Códigos</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Códigos</li>
+          <li>Nuevo</li>
+        </ol>
+      </div>
+    </div>
+</section>
+<!-- End Breadcrumbs -->
+
+<!-- ======= About Section ======= -->
+<section id="contact" class="contact">
+    <div class="container">      
+
+      <div class="section-title">
+        <h2>Nuevo Código</h2>
+        <p></p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Título</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>-- Seleccionar --</option>                   
+                  </select>
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="name">Código</label>
+                    <input type="passsword" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" autocomplete="off" />
+                    <div class="validate"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="name">Edición</label>
+                    <select class="form-control" id="exampleFormControlSelect2">
+                      <option>-- Seleccionar --</option>                   
+                    </select>
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="name">Costo</label>
+                    <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" autocomplete="off" placeholder="" />
+                    <div class="validate"></div>
+                  </div>             
+              </div> 
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-right"><button type="submit">Guardar</button></div>
+            </form>
+          </div>
+      </div>    
+
+      
+      <div class="row">
+        <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">              
+              <div class="form-group">
+                <label for="exampleFormControlFile1">Archivo </label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-left"><button type="submit">Subir Archivo</button></div>
+            </form>
+          </div>
+      </div>  
+    </div>
+</section><!-- End About Section -->
+
+  

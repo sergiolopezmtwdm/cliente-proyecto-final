@@ -1,0 +1,43 @@
+a > span.icon-Contenedor-Logo{
+  /* color: #ea591d; */
+  /* color: #633974; */
+  /* color: #e72586; */
+  font-size: 200px;
+}
+
+td > a > i {
+  /* color: red; */
+  font-size: 25px;
+}
+
+td > a > i.bx-time {
+  color: #ea591d;
+}
+
+td > a > i.bx-trash {
+  color: red;
+}
+
+td > i{
+  font-size: 25px;
+}
+
+td > i.icon-Contenedor-Xbox {
+  color: green;
+}
+
+td > i.icon-Contenedor-PS {
+  color: blue;
+}
+
+td > i.icon-Contenedor-Nintendo {
+  color:#ea591d;
+}
+
+td > i.icon-Contenedor-PC {
+  color: gray;
+}
+
+ .ircompra > .btn {
+  margin-left: 0%!important;
+}
