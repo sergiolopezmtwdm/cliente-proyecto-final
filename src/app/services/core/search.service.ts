@@ -16,9 +16,10 @@ export class SearchService {
    * @param criterio
    */
   async sendCriterio(criterio: string){
-    await this.router.navigate(['juegos']);
+    console.log(`criterio: ${criterio}`);
+    await this.router.navigate(['componentes/allgames']);
     this.subject$.next(criterio);
-    // console.log(`criterio: ${criterio}`);
+
   }
 
   /**

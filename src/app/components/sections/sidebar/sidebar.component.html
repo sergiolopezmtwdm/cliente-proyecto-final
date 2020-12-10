@@ -25,40 +25,21 @@
         <!-- <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li> -->
         <a routerLink="customers">Customer</a>
         <li *ngFor="let menuItem of menuItems"><a [routerLink]="menuItem.route" routerLinkActive="active"><i class="{{menuItem.icon}}"></i><span>{{menuItem.title}}</span></a></li>
-
-        <li class="active"><a routerLink="home" href="#contenido"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <!-- <li class="active"><a href="#contenido"><i class="bx bx-home"></i> <span>Home</span></a></li> -->
-        <!-- <li><a href="#xbox"><i class="bx bx-user"></i> <span>Xbox</span></a></li> -->
-        <li><a href="#xbox"><i class="icon-Contenedor-Xbox"></i> <span>Xbox</span></a></li>
-        <!-- <li><a href="#playstation"><i class="bx bx-file-blank"></i> <span>Play Station</span></a></li> -->
-        <li><a href="#playstation"><i class="icon-Contenedor-PS"></i> <span>Play Station</span></a></li>
-        <!-- <li><a href="#pc"><i class="bx bx-book-content"></i>PC</a></li><br> -->
-        <li><a href="#pc"><i class="icon-Contenedor-PC"></i>PC</a></li>
-        <li><a href="#nintendo"><i class="icon-Contenedor-Nintendo"></i>Nintendo</a></li>
-        <br>
-        <!-- <li><a [routerLink]="carrito" routerLinkActive="active" href="carrito.html"><i class="bx bx-cart"></i>Carrito (0)</a></li> -->
-        <!-- <li><a href="carrito"><i class="bx bx-cart"></i>Carrito (0)</a></li> -->
-        <li><a routerLink="carrito" href="#carrito"><i class="bx bx-cart"></i>Carrito</a></li>
-        <!-- <li><a href="#carrito"><i class="bx bx-cart"></i>Carrito</a></li> -->
-        <br>
-        <li *ngIf="isUserAuthenticated()"><a href="#perfil"><i class="bx bx-book-content"></i>Mi Perfil</a></li>
-        <br>
-        <button class="btn btn-primary w3-red" type="submit" value="Submit" *ngIf="isUserAuthenticated()"
-          style="width: 85%;">
-          <li class="logout" (click)="logOut()">Logout</li>
-        </button>
-
-        <li><button type="button" class="btn btn-primary w3-red" (click)="open(mymodal)" style="width: 85%;"
-            *ngIf="!isUserAuthenticated()"><span>Iniciar
-              Sesión</span></button></li><br>
-        <li><button type="button" class="btn btn-primary w3-green" (click)="open(mymodal)" style="width: 85%;"
-            *ngIf="!isUserAuthenticated()"><span>Registrarse</span></button>
-        </li>
+        <li *ngIf="isUserAuthenticated()"><a href="#perfil"><i class="bx bx-book-content"></i>Mi Perfil</a></li>
+        <br>
+        <button class="btn btn-primary w3-red" type="submit" value="Submit" *ngIf="isUserAuthenticated()"
+          style="width: 85%;">
+          <li class="logout" (click)="logOut()">Logout</li>
+        </button>
+        <li><button type="button" class="btn btn-primary w3-red" (click)="open(mymodal)" style="width: 85%;"
+            *ngIf="!isUserAuthenticated()"><span>Iniciar Sesión</span></button></li><br>
+        <li><button type="button" class="btn btn-primary w3-green" (click)="open(mymodal)" style="width: 85%;"
+            *ngIf="!isUserAuthenticated()"><span>Registrarse</span></button>
+        </li>
       </ul>
     </nav><!-- .nav-menu -->
   </div>
 </header>
-
 
 <ng-template #mymodal>
   <div class="modal-body">

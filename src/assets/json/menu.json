@@ -7,46 +7,41 @@
   {
     "title": "Xbox",
     "icon": "icon-Contenedor-Xbox",
-    "route": "xbox"
+    "route": "componentes/xbox"
   },
   {
     "title": "PlayStation",
     "icon": "icon-Contenedor-PS",
-    "route": "ps"
+    "route": "componentes/ps"
   },
   {
     "title": "PC",
     "icon": "icon-Contenedor-PC",
-    "route": "pc"
-  },
-  {
-    "title": "Nintendo",
-    "icon": "icon-Contenedor-Nintendo",
-    "route": "nintendo"
+    "route": "componentes/pc"
   },
   {
     "title": "Carrito",
     "icon": "bx bx-cart",
-    "route": "carrito"
+    "route": "componentes/carrito"
   },
   {
     "title": "Clientes",
-    "icon": "bx bx-user",
+    "icon": "bx bx-user-circle",
     "route": "clientes/lista"
   },
   {
     "title": "Códigos",
-    "icon": "bx bx-user",
+    "icon": "bx bx-barcode",
     "route": "codigos/lista"
   },
   {
     "title": "Productos",
-    "icon": "bx bx-user",
+    "icon": "bx bx-game",
     "route": "productos/lista"
   },
   {
     "title": "Ventas",
-    "icon": "bx bx-user",
+    "icon": "bx bx-money",
     "route": "ventas/lista"
   }
 ]

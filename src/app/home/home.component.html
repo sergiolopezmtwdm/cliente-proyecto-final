@@ -87,63 +87,29 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6">
+    <div *ngFor="let card of cardItems" class="col-md-6">
+      <!-- <p>{{ card | json}}</p> -->
       <div class="w3-card-4 w3-margin" style="width:95%">
         <div class="w3-display-container w3-text-white">
-          <img src="assets/img/6.jpg" alt="Lights" style="width:100%">
-          <div class="w3-xlarge w3-display-bottomleft w3-padding">TITULO</div>
+          <img src="{{card.imagen}}" alt="Lights" style="width:100%">
+          <div class="w3-xlarge w3-display-bottomleft w3-padding">{{card.titulo}}</div>
         </div>
         <div class="w3-row w3-black">
           <div class="w3-third w3-center">
-            <h3>DESCRIPCIÓN</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="w3-card-4 w3-margin" style="width:95%">
-        <div class="w3-display-container w3-text-white">
-          <img src="assets/img/1.jpg" alt="Lights" style="width:100%">
-          <div class="w3-xlarge w3-display-bottomleft w3-padding">TITULO</div>
-        </div>
-        <div class="w3-row w3-black">
-          <div class="w3-third w3-center">
-            <h3>DESCRIPCIÓN</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="w3-card-4 w3-margin" style="width:95%">
-        <div class="w3-display-container w3-text-white">
-          <img src="assets/img/5.jpg" alt="Lights" style="width:100%">
-          <div class="w3-xlarge w3-display-bottomleft w3-padding">TITULO</div>
-        </div>
-        <div class="w3-row w3-black">
-          <div class="w3-third w3-center">
-            <h3>DESCRIPCIÓN</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="w3-card-4 w3-margin" style="width:95%">
-        <div class="w3-display-container w3-text-white">
-          <img src="assets/img/2.jpg" alt="Lights" style="width:100%">
-          <div class="w3-xlarge w3-display-bottomleft w3-padding">TITULO</div>
-        </div>
-        <div class="w3-row w3-black">
-          <div class="w3-third w3-center ">
-            <h3>DESCRIPCIÓN</h3>
+            <h3>{{card.descripcion}}</h3>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <main id="main">
-  <componentes-xbox></componentes-xbox>
+  <!-- <componentes-xbox></componentes-xbox>
   <componentes-play-station></componentes-play-station>
-  <componentes-pc></componentes-pc>
+  <componentes-pc></componentes-pc> -->
 </main>
+
+
+<!-- ======= Footer ======= -->
+<sections-footer></sections-footer>
+<!-- End Footer Section -->

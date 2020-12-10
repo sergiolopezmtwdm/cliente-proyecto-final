@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { HomeService } from '../services/core/home.service';
 
 @Component({
   selector: 'app-home',
@@ -11,14 +12,22 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  cardItems: any[] = [];
+
   invalidLogin: boolean;
   closeResult: string;
   modalReference: any;
 
   //constructor(private jwtHelper: JwtHelperService, private router: Router) { }
-  constructor(private modalService: NgbModal, private jwtHelper: JwtHelperService, private router: Router, private http: HttpClient) { }
+  constructor(private modalService: NgbModal, private jwtHelper: JwtHelperService, private router: Router, private http: HttpClient, private homeSvc: HomeService) {
+    this.homeSvc.getItems().subscribe((data: any[]) => {
+      this.cardItems = data;
+    });
+  }
 
   ngOnInit(): void {
+
   }
 
   isUserAuthenticated() {

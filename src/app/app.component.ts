@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from './services/core/home.service';
 import { LoginService } from './services/core/login.service';
 import { SidebarService } from './services/core/sidebar.service';
 
@@ -16,7 +17,7 @@ declare var App: any;
 export class AppComponent implements OnInit {
   title = 'cliente-angular';
 
-  constructor(private sidebarSvc: SidebarService, private loginSvc: LoginService) {}
+  constructor(private sidebarSvc: SidebarService, private loginSvc: LoginService, private homeSvc: HomeService) {}
   sidebarItems: any[] = [];
 
   ngOnInit(){

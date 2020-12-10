@@ -1,0 +1,54 @@
+  [
+    {
+      "sku": "74521854213",
+      "descripcion": "GEARS 5",
+      "plataforma": "Xbox Series X",
+      "genero": "Aventura",
+      "clasificacion": "Adolecentes",
+      "imagen": "assets/img/6.jpg",
+      "titulo": "GEARS 5",
+      "fechaLanzamiento": "2018-12-03T00:00:00",
+      "fechaActualizacion": "1900-01-01T00:00:00",
+      "fechaCreacion": "2020-12-08T23:57:36.247",
+      "id": 3
+    },
+    {
+      "sku": "74521854213",
+      "descripcion": "GEARS 5",
+      "plataforma": "Xbox Series X",
+      "genero": "Aventura",
+      "clasificacion": "Adolecentes",
+      "imagen": "assets/img/1.jpg",
+      "titulo": "GEARS 5",
+      "fechaLanzamiento": "2018-12-03T00:00:00",
+      "fechaActualizacion": "1900-01-01T00:00:00",
+      "fechaCreacion": "2020-12-08T23:57:36.247",
+      "id": 3
+    },
+    {
+      "sku": "74521854213",
+      "descripcion": "GEARS 5",
+      "plataforma": "Xbox Series X",
+      "genero": "Aventura",
+      "clasificacion": "Adolecentes",
+      "imagen": "assets/img/5.jpg",
+      "titulo": "GEARS 5",
+      "fechaLanzamiento": "2018-12-03T00:00:00",
+      "fechaActualizacion": "1900-01-01T00:00:00",
+      "fechaCreacion": "2020-12-08T23:57:36.247",
+      "id": 3
+    },
+    {
+      "sku": "74521854213",
+      "descripcion": "GEARS 5",
+      "plataforma": "Xbox Series X",
+      "genero": "Aventura",
+      "clasificacion": "Adolecentes",
+      "imagen": "assets/img/2.jpg",
+      "titulo": "GEARS 5",
+      "fechaLanzamiento": "2018-12-03T00:00:00",
+      "fechaActualizacion": "1900-01-01T00:00:00",
+      "fechaCreacion": "2020-12-08T23:57:36.247",
+      "id": 3
+    }
+]

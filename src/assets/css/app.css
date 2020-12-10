@@ -41,3 +41,119 @@ td > i.icon-Contenedor-PC {
  .ircompra > .btn {
   margin-left: 0%!important;
 }
+
+
+
+
+/*--------------------------------------------------------------
+# Sección detalle de juegos
+--------------------------------------------------------------*/
+
+.boxdatosjuegos{
+  height: auto;
+  display: block;
+
+  padding: 10px;
+}
+.boxdescripcion h2{
+ color:#633974;
+}
+.boxdatosjuegos .boxdescripcion a{
+font-size: 1.5em;
+color:#88b656 !important ;
+}
+.boximgdetalle
+{
+  padding: 0;
+  margin-bottom: 0;
+}
+.boxdescripcion p{
+  color: #000;
+  font-size: 1em;
+  text-align: justify;
+}
+.boxiconosdescrip{
+  padding: 10px;
+  display: block;
+  text-align: right;
+
+}
+.boxiconosdescrip #idprecio {
+  color:#cd5926;
+  display: block;
+  font-size: 2em;
+  text-align: right;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.navdescripcionjuego a
+{
+  color:#633974;
+  font-weight: bold;
+}
+
+.navdescripcionjuego p
+{
+
+  color:#000000;
+  font-size: 1.1em;
+  text-align: justify;
+  margin-top: 0;
+
+}
+.navdescripcionjuego h2{
+  display: block;
+  color:#633974;
+}
+.boximagenesnav{
+  padding: 40px;
+}
+
+/* cección detalle de juegos */
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#footer {
+  padding: 15px;
+  color: #f4f6fd;
+  font-size: 14px;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #040b14;
+}
+
+#footer .copyright {
+  text-align: center;
+}
+
+#footer .credits {
+  padding-top: 5px;
+  text-align: center;
+  font-size: 13px;
+  color: #eaebf0;
+}
+
+@media (max-width: 1199px) {
+  #footer {
+      position: static;
+      width: auto;
+      padding-right: 20px 15px;
+  }
+}
+
+/* Footer */
+
+
+.bodyTest {
+  margin-left: 300px;
+  height: auto;
+  background: linear-gradient(to bottom right, rgb(65, 26, 117), rgb(92, 87, 87));
+  padding-bottom: 2em;
+}

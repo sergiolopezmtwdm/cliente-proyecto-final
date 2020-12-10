@@ -12,21 +12,12 @@ import { CustomersComponent } from './customers/customers.component';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { SidebarComponent } from './components/sections/sidebar/sidebar.component';
-import { CarritoComponent } from './pages/componentes/carrito/carrito.component';
-
 // import { RouterModule } from '@angular/router';
 import { AppRouterModule } from './app.route';
-import { WishlistComponent } from './pages/componentes/wishlist/wishlist.component';
-import { PcComponent } from './pages/componentes/pc/pc.component';
-
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { XboxComponent } from './pages/componentes/xbox/xbox.component';
-import { PlayStationComponent } from './pages/componentes/play-station/play-station.component';
-import { PerfilComponent } from './pages/componentes/perfil/perfil.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { AllgamesComponent } from './pages/componentes/allgames/allgames.component';
+import { FooterComponent } from './components/sections/footer/footer.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -40,14 +31,15 @@ export function tokenGetter() {
     LoginComponent,
     CustomersComponent,
     SidebarComponent,
-    CarritoComponent,
-    WishlistComponent,
-    PcComponent,
-    XboxComponent,
-    PlayStationComponent,
-    PerfilComponent,
+    // CarritoComponent,
+    // WishlistComponent,
+    // PcComponent,
+    // XboxComponent,
+    // PlayStationComponent,
+    // PerfilComponent,
     PageNotFoundComponent,
-    AllgamesComponent,
+    // AllgamesComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

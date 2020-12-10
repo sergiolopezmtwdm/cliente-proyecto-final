@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { ProductosService } from 'src/app/services/core/productos.service';
 import { SearchService } from 'src/app/services/core/search.service';
 
 @Component({
@@ -9,12 +10,12 @@ import { SearchService } from 'src/app/services/core/search.service';
   ]
 })
 export class AllgamesComponent implements OnInit, OnDestroy {
-
+  productoItems: any[] = [];
   criterio: string;
 
   subscription$: Subscription;
 
-  constructor(private svcSearch: SearchService) {
+  constructor(private svcSearch: SearchService, private svcProductos: ProductosService) {
 
     this.subscription$ = svcSearch.onListenCriterio().subscribe((criterio: string) =>{
       //console.log(`La subscripcion al observable es: `, criterio);
@@ -24,6 +25,12 @@ export class AllgamesComponent implements OnInit, OnDestroy {
       //   this.getAllData();
       // }
       this.criterio = criterio;
+      this.svcProductos.getItems().subscribe((data:any[])=>{
+        this.productoItems = data.filter(
+          x => x.titulo.includes(criterio));;
+      })
+
+
     });
 
   }

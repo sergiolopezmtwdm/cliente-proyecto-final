@@ -12,12 +12,13 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 const routes: Routes = [
   // { path: '', redirectTo: '/carrito', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'customers', component: CustomersComponent },
-  { path: 'carrito', component: CarritoComponent },
-  { path: 'perfil', component: PerfilComponent },
-  { path: 'juegos', component: AllgamesComponent },
+  // { path: 'customers', component: CustomersComponent },
+  // { path: 'carrito', component: CarritoComponent },
+  // { path: 'perfil', component: PerfilComponent },
+  // { path: 'juegos', component: AllgamesComponent },
   // => (return)
 
+  { path: 'componentes', loadChildren: () => import('./pages/componentes/componentes.module').then(module => module.ComponentesModule)},
   { path: 'productos', loadChildren: () => import('./pages/productos/productos.module').then(module => module.ProductosModule) },
   { path: 'codigos', loadChildren: () => import('./pages/codigos/codigos.module').then(module => module.CodigosModule) },
   { path: 'clientes', loadChildren: () => import('./pages/clientes/clientes.module').then(module => module.ClientesModule) },

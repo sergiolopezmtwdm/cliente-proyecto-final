@@ -13,12 +13,13 @@ export class SidebarService {
   constructor(private http: HttpClient, private loginSvc: LoginService) { }
 
   getItems() {
-    if (!this.loginSvc.isUserAuthenticated()) {
-      return this.http.get(endPoint);
-    }
-    else {
-      return this.http.get(endPoint2);
-    }
+    // if (this.loginSvc.isUserAuthenticated()) {
+    //   return this.http.get(endPoint);
+    // }
+    // else {
+    //   return this.http.get(endPoint2);
+    // }
+    return this.http.get(endPoint);
   }
 
 }
