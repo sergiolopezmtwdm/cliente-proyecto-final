@@ -22,7 +22,9 @@ export class XboxComponent implements OnInit {
     dots: false,
     navSpeed: 600,
     autoplayTimeout: 5000,
-    navText: ['&#8249', '&#8250;'],
+    // navText: ['&#8249', '&#8250;'],
+    navText: [ '<div class="nav-owl text-center font-weight-bold"><i class="bx bx-left-arrow-alt"></i></div>', '<div class="nav-owl text-center font-weight-bold"><i class="bx bx-right-arrow-alt"></i></div>' ],
+    // navText: ['', ''],
     responsive: {
       0: {
         items: 1
@@ -35,6 +37,9 @@ export class XboxComponent implements OnInit {
       },
       1000: {
         items: 4
+      },
+      1250: {
+        items: 5
       }
     },
     nav: true

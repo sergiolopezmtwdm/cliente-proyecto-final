@@ -1,0 +1,75 @@
+<div id="main-carousel">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="2000">
+              <img src="assets/img/1.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>First slide label</h5>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              </div>
+          </div>
+          <div class="carousel-item" data-interval="2000">
+              <img src="assets/img/5.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>Second slide label</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+          </div>
+          <div class="carousel-item" data-interval="2000">
+              <img src="assets/img/6.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                  <h5>Third slide label</h5>
+                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              </div>
+          </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
+  </div>
+
+  <div class="row">
+      <div *ngFor="let card of cardItems" class="col-md-6">
+          <!-- <p>{{ card | json}}</p> -->
+          <div class="w3-card-4 w3-margin" style="width:95">
+              <div class="w3-display-container w3-text-white">
+                  <img src="{{card.imagen}}" alt="Lights" style="width:100%">
+                  <div class="w3-xlarge w3-display-bottomleft w3-padding">{{card.titulo}}</div>
+              </div>
+              <div class="w3-row w3-black">
+                  <div class="w3-third w3-center">
+                      <h3>{{card.descripcion}}</h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- ======= XBox Section ======= -->
+
+<componentes-xbox></componentes-xbox>
+
+<!-- End XBox Section -->
+
+<!-- ======= Play Station Section ======= -->
+
+<componentes-play-station></componentes-play-station>
+
+<!-- End Play Station Section -->
+
+<!-- ======= PC Section ======= -->
+
+<componentes-pc></componentes-pc>
+
+<!-- End PC Section -->

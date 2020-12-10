@@ -13,11 +13,12 @@ import { PlayStationComponent } from './play-station/play-station.component';
 import { PcComponent } from './pc/pc.component';
 import { ComponentesComponent } from './componentes.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { HomeComponent } from './home/home.component';
 
 // CarouselComponent
 @NgModule({
   declarations: [
-    ComponentesComponent, PerfilComponent, CarritoComponent, AllgamesComponent, WishlistComponent, DetalleComponent, XboxComponent, PlayStationComponent, PcComponent
+    ComponentesComponent, PerfilComponent, CarritoComponent, AllgamesComponent, WishlistComponent, DetalleComponent, XboxComponent, PlayStationComponent, PcComponent, HomeComponent
   ],
   imports: [
     CommonModule,

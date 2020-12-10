@@ -2,7 +2,7 @@
   {
     "title": "Home",
     "icon": "bx bx-home",
-    "route": "home"
+    "route": "componentes/home"
   },
   {
     "title": "Xbox",
@@ -28,11 +28,6 @@
     "title": "Clientes",
     "icon": "bx bx-user-circle",
     "route": "clientes/lista"
-  },
-  {
-    "title": "Códigos",
-    "icon": "bx bx-barcode",
-    "route": "codigos/lista"
   },
   {
     "title": "Productos",

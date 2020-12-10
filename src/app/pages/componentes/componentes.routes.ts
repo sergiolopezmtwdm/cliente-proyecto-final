@@ -4,6 +4,7 @@ import { AllgamesComponent } from './allgames/allgames.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { ComponentesComponent } from './componentes.component';
 import { DetalleComponent } from './detalle/detalle.component';
+import { HomeComponent } from './home/home.component';
 import { PcComponent } from './pc/pc.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PlayStationComponent } from './play-station/play-station.component';
@@ -18,6 +19,9 @@ const routes: Routes = [
     path: '',
     component: ComponentesComponent,
     children: [
+      {
+        path: 'home', component: HomeComponent
+      },
       {
         path: 'xbox', component: XboxComponent
       },
