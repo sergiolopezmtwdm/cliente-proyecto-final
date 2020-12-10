@@ -1,13 +1,15 @@
+<!-- ======= Mobile nav toggle button ======= -->
+<button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
 <!-- Page Wrapper -->
 <!-- <div id="wrapper"> -->
-<sections-sidebar
-  [menuItems] = "sidebarItems"
-></sections-sidebar>
+<sections-sidebar [menuItems]="sidebarItems"></sections-sidebar>
 <!-- <section id="contenido" class="facts"> -->
-<router-outlet></router-outlet>
-<!-- ======= Footer ======= -->
-<sections-footer></sections-footer>
-<!-- End Footer Section -->
+
+<main id="main">
+    <router-outlet></router-outlet>
+</main>
+
 <!-- </section> -->
 <!-- <pre>
   {{sidebarItems | json}}
@@ -15,3 +17,5 @@
 
 <!-- </div> -->
 
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
