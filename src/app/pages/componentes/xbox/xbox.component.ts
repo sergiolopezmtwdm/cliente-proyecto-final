@@ -1,16 +1,60 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Subscription } from 'rxjs';
+import { ProductosService } from 'src/app/services/core/productos.service';
+import { SearchService } from 'src/app/services/core/search.service';
 
 @Component({
   selector: 'componentes-xbox',
   templateUrl: './xbox.component.html',
   styleUrls: ['./xbox.component.scss']
 })
-export class XboxComponent implements OnInit {
+export class XboxComponent implements OnInit, OnDestroy {
+  criterio: string;
+  interval: any;
+  count = 0;
 
-  constructor() { }
+  gamesList: any[] = [];
+  subscription$: Subscription;
+
+  constructor(private svcSearch: SearchService, private svcProductos: ProductosService) { 
+
+    this.interval = setInterval(() => {
+      console.log(this.count++);
+    }, 1000);
+
+
+    this.getAllData();
+
+    this.subscription$ = this.svcSearch.onListenCriterio().subscribe((criterio: string) => {
+
+      if (criterio != '') {
+        this.searchCriterio(criterio);
+      } else {
+        this.getAllData();
+      }
+      console.log('La subscripción es: ', criterio);
+
+    });
+
+  }
 
   ngOnInit(): void {
+  }
+
+
+  getAllData() {
+    this.svcProductos.getAllGames().subscribe((data: any[]) => {
+      this.gamesList = data;
+    });
+  }
+
+  searchCriterio(criterio) {
+    console.log('El criterio es: ', criterio);
+    this.svcProductos.getGamesBycriterio(criterio).subscribe((data: any[]) => {
+      this.gamesList = data;
+    });
+
   }
 
   customOptions: OwlOptions = {
@@ -43,6 +87,10 @@ export class XboxComponent implements OnInit {
       }
     },
     nav: true
+  }
+
+  ngOnDestroy() {
+    this.subscription$.unsubscribe();
   }
 
 }
