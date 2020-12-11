@@ -10,6 +10,8 @@ const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/pro
 })
 export class ProductosService {
 
+  // id;
+
   constructor(private http: HttpClient) { }
 
   getItems() {
@@ -18,30 +20,45 @@ export class ProductosService {
 
   public getProductoById(id: string) {
     // return this.http.get(`${endPoint}/${id}`);
+    // this.id = parseInt(id);
     return this.http.get(`${endPoint}/${id}`);
     // return this.http.get("assets/json/producto.json");
   }
 
-  public updateProduct = (form: NgForm) => {
+  public updateProduct = (form: NgForm, id:number) => {
+    form.value.id = id;
+    form.value.costo = parseInt(form.value.costo);
+    form.value.precioVenta = parseInt(form.value.precioVenta);
+    form.value.idPlataforma = form.value.plataforma.value;
+    form.value.idGenero = form.value.genero.value;
+    form.value.idClasificacion = form.value.clasificacion.value;
+    delete form.value.plataforma;
+    delete form.value.genero;
+    delete form.value.clasificacion;
     const formulario = JSON.stringify(form.value);
     console.log("formulario: ", formulario);
+    this.http.post(`${endPoint}/update`,
+    formulario, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }).subscribe(response => {
+      alert("modificación correcto");
+      // this.router.navigate(["/"]);
+      // this.router.navigate(["carrito"]);
 
-    // this.http.post(`${endPoint}/UpdateProduct`,
-    // formulario, {
-    //   headers: new HttpHeaders({
-    //     "Content-Type: "application/json"
-    //   })
-    // }).subscribe(response => {
-    //   alert("insert correcto");
-    // }, err => {
-    //   alert("fallo el insert");
-    // });
+      // this.sidebarSvc.getItems().subscribe((data:any)=>{
+      //   this.menuItems = data;
+      // });
 
+    }, err => {
+      alert("fallo el insert");
+      // this.invalidLogin = true;
+      // this.modalReference.close();
+    });
   }
 
   public insertProduct = (form: NgForm) => {
-
-
     // var producto: any = {
     //   sku: form.value.sku,
     //   titulo: form.value.titulo,
@@ -61,11 +78,11 @@ export class ProductosService {
     form.value.imagen = "";
     form.value.imagen2 = "";
     form.value.imagen3 = "";
-    form.value.urlVideo = "";
+    // form.value.urlVideo = "";
     form.value.idPlataforma = form.value.plataforma.value;
     form.value.idGenero = form.value.genero.value;
     form.value.idClasificacion = form.value.clasificacion.value;
-    form.value.edicion = "Standard";
+    // form.value.edicion = "Standard";
     delete form.value.plataforma;
     delete form.value.genero;
     delete form.value.clasificacion;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ClientesService } from 'src/app/services/core/clientes.service';
 
 @Component({
   selector: 'app-detalle',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detalle.component.scss']
 })
 export class DetalleComponent implements OnInit {
+  item: any;
 
-  constructor() { }
+  constructor(private router: ActivatedRoute, private clientesSvc: ClientesService) {
+    this.router.params.subscribe((param: any) => {
+      this.getItemById(param['id']);
+    }
+    );
+  }
 
   ngOnInit(): void {
+  }
+
+  getItemById(id: string) {
+    this.clientesSvc.getItems().subscribe((data:any) =>{
+      this.item = data;
+    });
   }
 
 }

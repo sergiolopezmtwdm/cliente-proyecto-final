@@ -44,9 +44,11 @@ export class DetalleComponent implements OnInit {
   clasificacionSelected = null;
 
   fechaLanzamiento: string;
+  id:number;
 
   constructor(private router: ActivatedRoute, private productoSvc: ProductosService) {
     this.router.params.subscribe((param: any) => {
+      this.id = parseInt(param['id']);
       this.getProductoById(param['id']);
     }
     );
@@ -74,12 +76,10 @@ export class DetalleComponent implements OnInit {
       ;
       this.fechaLanzamiento = new Date(data.producto.fechaLanzamiento).toISOString().split('T')[0];
     });
-
-
   }
 
   updateProducto = (form: NgForm) => {
-    this.productoSvc.updateProduct(form);
+    this.productoSvc.updateProduct(form, this.id);
   }
 
 }
