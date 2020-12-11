@@ -2,11 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-<<<<<<< HEAD
-// const endPoint: string = 'assets/json/productos.json';
-=======
 //const endPoint: string = 'assets/json/productos.json';
->>>>>>> my-temporary-work2
 const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product';
 
 @Injectable({
@@ -22,9 +18,6 @@ export class ProductosService {
     return this.http.get(endPoint);
   }
 
-<<<<<<< HEAD
-  public getProductoById(id: string) {
-=======
   getAllGames(){
     return this.http.get(`${endPoint}`);
   }
@@ -39,7 +32,6 @@ export class ProductosService {
   }
 
   public getProductoById(id: string){
->>>>>>> my-temporary-work2
     // return this.http.get(`${endPoint}/${id}`);
     // this.id = parseInt(id);
     return this.http.get(`${endPoint}/${id}`);
