@@ -33,7 +33,8 @@ export class AuthGuardService implements CanActivate {
 
     let isRefreshSuccess: boolean;
     try{
-      const response = await this.http.post("https://localhost:44378/api/token/refresh", credentials, {
+      // const response = await this.http.post("https://localhost:44378/api/token/refresh", credentials, {
+      const response = await this.http.post("https://apimtwdmfinalproject.azurewebsites.net/api/token/refresh", credentials, {
         headers: new HttpHeaders({
           "Content-Type": "application/json"
         }),

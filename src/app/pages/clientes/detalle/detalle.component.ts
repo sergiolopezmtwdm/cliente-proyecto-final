@@ -9,12 +9,18 @@ import { ClientesService } from 'src/app/services/core/clientes.service';
 })
 export class DetalleComponent implements OnInit {
   item: any;
-  id:number;
+  // id:number;
+  id:string;
+  codigoItems: any[] = [];
+  wishListItems: any[] = [];
 
   constructor(private router: ActivatedRoute, private clientesSvc: ClientesService) {
     this.router.params.subscribe((param: any) => {
-      this.id = parseInt(param['id']);
+      // this.id = parseInt(param['id']);
+      this.id = param['id'];
       this.getItemById(param['id']);
+      this.getCodesByUserId(param['id']);
+      this.getWishListByUserId(param['id']);
     }
     );
   }
@@ -24,8 +30,20 @@ export class DetalleComponent implements OnInit {
 
   getItemById(id: string) {
     this.clientesSvc.getItems().subscribe((data:any) =>{
-      this.item = data;
+      this.item = data.filter(x => x.id == id)[0];
+      console.log("item: ",this.item);
     });
   }
 
+  getCodesByUserId(id: string){
+    this.clientesSvc.getCodesByUserId(id).subscribe((data:any[])=>{
+      this.codigoItems = data;
+    });
+  }
+
+  getWishListByUserId(id: string){
+    this.clientesSvc.getWishListByUserId(id).subscribe((data:any[])=>{
+      this.wishListItems = data;
+    });
+  }
 }

@@ -1,9 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { VariableAst } from '@angular/compiler';
+import { variable } from '@angular/compiler/src/output/output_ast';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ClientesService } from 'src/app/services/core/clientes.service';
 import { LoginService } from 'src/app/services/core/login.service';
 import { SearchService } from 'src/app/services/core/search.service';
 import { SidebarService } from 'src/app/services/core/sidebar.service';
@@ -23,7 +26,7 @@ export class SidebarComponent implements OnInit {
   modalReference: any;
   closeResult: string;
 
-  constructor(private modalService: NgbModal, private router: Router, private http: HttpClient, private loginSvc: LoginService, private sidebarSvc: SidebarService, private searchSvc: SearchService) { }
+  constructor(private modalService: NgbModal, private router: Router, private http: HttpClient, private loginSvc: LoginService, private sidebarSvc: SidebarService, private searchSvc: SearchService, private clienteSvc: ClientesService) { }
 
   isUserAuthenticated() {
     // const token: string = localStorage.getItem("jwt");
@@ -40,39 +43,68 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public register = async (form: NgForm) => {
+    const formulario = JSON.stringify(form.value);
+    console.log("formulario:", formulario);
+    var registerObject: any = {
+      email: form.value.emailRegister,
+      contrasenia: form.value.contraseniaRegister,
+      nombreCompleto: form.value.nombreRegister,
+      rol: "Cliente"
+    };
+    this.clienteSvc.registrarUsuario(registerObject).subscribe(response => {
+      alert("Registrado correctamente");
+      var credenciales: any = {
+        email: registerObject.email,
+        contrasenia: registerObject.contrasenia
+      };
+      this.loginSvc.login(credenciales).subscribe(response => {
+        this.loginSvc.setlocalStorage(response);
+        alert("has iniciado sesión correctamente");
+        this.invalidLogin = false;
+        this.modalReference.close();
+        this.router.navigate(["/"]);
+      }, err => {
+        this.invalidLogin = true;
+
+        // this.modalReference.close();
+      });
+    }, err => {
+      alert("No se ha podido registrar en este momento");
+    });
+
+  }
+
   public logOut = () => {
     localStorage.removeItem("jwt");
     localStorage.removeItem("refreshToken");
-    this.sidebarSvc.getItems().subscribe((data:any)=>{
+    this.sidebarSvc.getItemsAnonimo().subscribe((data: any) => {
       this.menuItems = data;
     });
+    this.router.navigate(["/"]);
+    alert("has salido de tu sesión exitosamente");
   }
-
 
   public login = (form: NgForm) => {
     const credentials = JSON.stringify(form.value);
     console.log("credenciales: ", credentials);
-    this.http.post("https://localhost:44378/api/auth/login",
-      credentials, {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      })
-    }).subscribe(response => {
-      const token = (<any>response).token;
-      const refreshToken = (<any>response).refreshToken;
-      const rol = (<any>response).rol;
-      localStorage.setItem("jwt", token);
-      localStorage.setItem("refreshToken", refreshToken);
-      this.invalidLogin = false;
-      this.router.navigate(["/"]);
-      // this.router.navigate(["carrito"]);
-      this.modalReference.close();
-      console.log(helper.decodeToken(token));
-
-      this.sidebarSvc.getItems().subscribe((data:any)=>{
+    this.loginSvc.login(credentials).subscribe(async response => {
+      await this.loginSvc.setlocalStorage(response);
+      // this.sidebarSvc.getItemsAutentificado().subscribe((data:any[]) => {
+      this.sidebarSvc.getItemsAutentificado().subscribe((data:any[]) => {
+        console.log("inicializando menú: ",JSON.stringify(data));
         this.menuItems = data;
       });
-
+      alert("has iniciado sesión correctamente " + (<any>response).nombreCompleto);
+      // console.log("token: ",(<any>response).token);
+      // this.sidebarSvc.getItems().subscribe((data:any)=>{
+      //   this.menuItems = data;
+      // });
+      // this.invalidLogin = false;
+      // this.router.navigate(["/"]);
+      // this.router.navigate(["carrito"]);
+      this.modalReference.close();
+      // console.log(helper.decodeToken(token));
     }, err => {
       this.invalidLogin = true;
       // this.modalReference.close();
@@ -103,7 +135,7 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  onclick_search(searchCriterio: string){
+  onclick_search(searchCriterio: string) {
     // console.log(`searchCriterio: ${searchCriterio}`);
     this.searchSvc.sendCriterio(searchCriterio);
   }

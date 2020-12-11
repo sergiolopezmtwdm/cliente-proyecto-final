@@ -16,6 +16,7 @@ export class VentasService {
     return this.http.get(endPoint);
   }
 
+
   public getVentasById(id: string){
     // return this.http.get(`${endPoint}/${id}`);
     return this.http.get(`${endPoint}/${id}`);

@@ -26,8 +26,16 @@ export class AppComponent implements OnInit {
   }
 
   getData() {
-    this.sidebarSvc.getItems().subscribe((data:any)=>{
-      this.sidebarItems = data;
-    });
+    if(!this.loginSvc.isUserAuthenticated()){
+      this.sidebarSvc.getItemsAnonimo().subscribe((data:any)=>{
+        this.sidebarItems = data;
+      });
+    }else{
+        this.sidebarSvc.getItemsAutentificado().subscribe((data:any)=>{
+          this.sidebarItems = data;
+        });
+
+    }
+
   }
 }

@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/user';
-const endPoint2: string = 'https://localhost:44300/api/product/wishlist/user';
+const endPointWishlist: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product/wishlist/';
+const endPointCode: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/code/';
 
 
 @Injectable({
@@ -16,10 +17,22 @@ export class ClientesService {
     return this.http.get(endPoint);
   }
 
-  public getProductoById(id: string) {
-    // return this.http.get(`${endPoint}/${id}`);
-    this.id = parseInt(id);
-    return this.http.get(`${endPoint2}/${id}`);
-    // return this.http.get("assets/json/producto.json");
+  public getWishListByUserId(id: string) {
+    // this.id = parseInt(id);
+    return this.http.get(`${endPointWishlist}/user/${id}`);
+  }
+
+  public getCodesByUserId(id: string) {
+    // this.id = parseInt(id);
+    return this.http.get(`${endPointCode}/cliente/${id}`);
+  }
+
+  public registrarUsuario(usuario: any) {
+    return this.http.post(`${endPoint}`,
+      usuario, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    });
   }
 }

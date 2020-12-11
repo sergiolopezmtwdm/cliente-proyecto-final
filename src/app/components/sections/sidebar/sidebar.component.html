@@ -13,7 +13,8 @@
         </div>-->
     </div>
     <div class="input-group">
-      <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar por..." aria-label="Search" aria-describedby="basic-addon2" (keyup.enter)="onclick_search(searchCriterio.value)" #searchCriterio>
+      <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar por..." aria-label="Search"
+        aria-describedby="basic-addon2" (keyup.enter)="onclick_search(searchCriterio.value)" #searchCriterio>
       <div class="input-group-append">
         <button class="btn btn-primary" type="button" (click)="onclick_search(searchCriterio.value)">
           <i class="bx bx-search-alt-2"></i>
@@ -21,21 +22,31 @@
       </div>
     </div>
     <nav class="nav-menu">
+      <a routerLink="customers">Customer</a>
+
+      <!-- <strong><span style="color:red" *ngIf="isUserAuthenticated()">Logeado</span></strong> -->
       <ul>
         <!-- <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li> -->
-        <a routerLink="customers">Customer</a>
-        <li *ngFor="let menuItem of menuItems"><a [routerLink]="menuItem.route" routerLinkActive="active"><i class="{{menuItem.icon}}"></i><span>{{menuItem.title}}</span></a></li>
-        <li *ngIf="isUserAuthenticated()"><a href="#perfil"><i class="bx bx-book-content"></i>Mi Perfil</a></li>
-        <br>
-        <button class="btn btn-primary w3-red" type="submit" value="Submit" *ngIf="isUserAuthenticated()"
-          style="width: 85">
-          <li class="logout" (click)="logOut()">Logout</li>
-        </button>
-        <li><button type="button" class="btn btn-primary w3-red" (click)="open(mymodal)" style="width: 85%;"
-            *ngIf="!isUserAuthenticated()"><span>Iniciar Sesión</span></button></li><br>
-        <li><button type="button" class="btn btn-primary w3-green" (click)="open(mymodal)" style="width: 85%;"
-            *ngIf="!isUserAuthenticated()"><span>Registrarse</span></button>
-        </li>
+        <!-- <div *ngIf="isUserAuthenticated()"> -->
+        <li *ngFor="let menuItem of menuItems">
+          <a [routerLink]="menuItem.route" routerLinkActive="active"><i
+              class="{{menuItem.icon}}"></i><span>{{menuItem.title}}</span></a>
+        </li>
+        <!-- </div> -->
+        <!-- <li *ngIf="isUserAuthenticated()"><a href="#perfil"><i class="bx bx-book-content"></i>Mi Perfil</a></li> -->
+                <br>
+        <!--         <button class="btn btn-primary w3-red" type="submit" value="Submit" *ngIf="isUserAuthenticated()"
+                    style="width: 85">
+                    <li class="logout" (click)="logOut()">Logout</li>
+                  </button> -->
+          <div *ngIf="isUserAuthenticated()">
+            <button type="button" style="width: 85%;" class="btn btn btn-primary w3-red" (click)="logOut()">Logout</button>
+          </div>
+                <li><button type="button" class="btn btn-primary w3-red" (click)="open(mymodal)" style="width: 85%;"
+                        *ngIf="!isUserAuthenticated()"><span>Iniciar Sesión</span></button></li><br>
+                <li><button type="button" class="btn btn-primary w3-green" (click)="open(mymodal)" style="width: 85%;"
+                        *ngIf="!isUserAuthenticated()"><span>Registrarse</span></button>
+                  </li>
       </ul>
     </nav><!-- .nav-menu -->
   </div>
@@ -55,17 +66,17 @@
       <div id="login" class="tab-pane active">
         <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
           <div class="form-group">
-            <label for="exampleInputEmail1">Usuario</label>
-            <input type="email" id="username" name="nick" ngModel class="form-control" placeholder="User Name"
-              required autofocus>
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" id="email" name="email" ngModel class="form-control" placeholder="User Name" required
+              autofocus>
             <small id="emailHelp" class="form-text text-muted">We'll never share your information with
               anyone
               else.</small>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" id="password" name="password" ngModel class="form-control" placeholder="Password"
-              required>
+            <input type="password" id="Contrasenia" name="Contrasenia" ngModel class="form-control"
+              placeholder="Password" required>
           </div>
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -77,23 +88,25 @@
         <a class="link forget-password">Olvidaste la contraseña?</a>
         <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button> -->
       </div>
+
+      <!-- SECCION REGISTRO -->
+
       <div id="register" class="tab-pane fade">
-        <form>
+        <form class="form-signin" #registerForm="ngForm" (ngSubmit)="register(registerForm)">
           <div class="form-group">
-            <label for="exampleInputUser">Usuario</label>
-            <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="userHelp">
+            <label for="emailRegister">Email</label>
+            <input type="email" class="form-control" name="emailRegister" id="emailRegister" ngModel
+              aria-describedby="userHelp">
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Correo Electronico</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1">Nombre Completo</label>
+            <input type="text" class="form-control" name="nombreRegister" id="nombreRegister" ngModel
+              aria-describedby="emailHelp">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword2">Confirmar Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" id="Contrasenia" name="contraseniaRegister" ngModel class="form-control"
+              placeholder="Password" required>
           </div>
           <button type="submit" class="btn btn-primary w3-green btn">Registrarse</button>
         </form>
