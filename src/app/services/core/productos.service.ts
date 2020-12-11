@@ -2,11 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-<<<<<<< HEAD
-// const endPoint: string = 'assets/json/productos.json';
-=======
 //const endPoint: string = 'assets/json/productos.json';
->>>>>>> my-temporary-work2
 const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product';
 
 @Injectable({
@@ -14,17 +10,12 @@ const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/pro
 })
 export class ProductosService {
 
-  // id;
-
   constructor(private http: HttpClient) { }
 
   getItems() {
     return this.http.get(endPoint);
   }
 
-<<<<<<< HEAD
-  public getProductoById(id: string) {
-=======
   getAllGames(){
     return this.http.get(`${endPoint}`);
   }
@@ -39,47 +30,31 @@ export class ProductosService {
   }
 
   public getProductoById(id: string){
->>>>>>> my-temporary-work2
     // return this.http.get(`${endPoint}/${id}`);
-    // this.id = parseInt(id);
     return this.http.get(`${endPoint}/${id}`);
     // return this.http.get("assets/json/producto.json");
   }
 
-  public updateProduct = (form: NgForm, id:number) => {
-    form.value.id = id;
-    form.value.costo = parseInt(form.value.costo);
-    form.value.precioVenta = parseInt(form.value.precioVenta);
-    form.value.idPlataforma = form.value.plataforma.value;
-    form.value.idGenero = form.value.genero.value;
-    form.value.idClasificacion = form.value.clasificacion.value;
-    delete form.value.plataforma;
-    delete form.value.genero;
-    delete form.value.clasificacion;
+  public updateProduct = (form: NgForm) => {
     const formulario = JSON.stringify(form.value);
     console.log("formulario: ", formulario);
-    this.http.post(`${endPoint}/update`,
-    formulario, {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      })
-    }).subscribe(response => {
-      alert("modificación correcto");
-      // this.router.navigate(["/"]);
-      // this.router.navigate(["carrito"]);
 
-      // this.sidebarSvc.getItems().subscribe((data:any)=>{
-      //   this.menuItems = data;
-      // });
+    // this.http.post(`${endPoint}/UpdateProduct`,
+    // formulario, {
+    //   headers: new HttpHeaders({
+    //     "Content-Type: "application/json"
+    //   })
+    // }).subscribe(response => {
+    //   alert("insert correcto");
+    // }, err => {
+    //   alert("fallo el insert");
+    // });
 
-    }, err => {
-      alert("fallo el insert");
-      // this.invalidLogin = true;
-      // this.modalReference.close();
-    });
   }
 
   public insertProduct = (form: NgForm) => {
+
+
     // var producto: any = {
     //   sku: form.value.sku,
     //   titulo: form.value.titulo,
@@ -99,11 +74,11 @@ export class ProductosService {
     form.value.imagen = "";
     form.value.imagen2 = "";
     form.value.imagen3 = "";
-    // form.value.urlVideo = "";
+    form.value.urlVideo = "";
     form.value.idPlataforma = form.value.plataforma.value;
     form.value.idGenero = form.value.genero.value;
     form.value.idClasificacion = form.value.clasificacion.value;
-    // form.value.edicion = "Standard";
+    form.value.edicion = "Standard";
     delete form.value.plataforma;
     delete form.value.genero;
     delete form.value.clasificacion;
