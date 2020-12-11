@@ -10,6 +10,7 @@ import { VentasService } from 'src/app/services/core/ventas.service';
 export class DetalleComponent implements OnInit {
 
   venta: any;
+  detalleventa: any;
 
   constructor(private router: ActivatedRoute, private ventasSvc: VentasService) {
     this.router.params.subscribe((param: any) => {
@@ -25,9 +26,16 @@ export class DetalleComponent implements OnInit {
     // this.productoSvc.getProductoById(id).subscribe((data: any[]) => {
     //   this.producto = data;
     // });
+    console.log("getItemById: ", id);
+
+    // this.ventasSvc.getVentasById(id).subscribe((data:any[])=>{
+    //   this.venta = data;
+    // });
 
     this.ventasSvc.getVentasById(id).subscribe((data: any) => {
+      console.log(data);
       this.venta = data;
+
       // this.plataformaSelected =
       //   this.plataformaBindingsList.find( x => x.value === data.idPlataforma );
       // ;
@@ -38,6 +46,11 @@ export class DetalleComponent implements OnInit {
       //   this.clasificacionBindingsList.find( x => x.value === data.IdClasificacion )
       // ;
       // this.fechaLanzamiento = new Date(data.fechaLanzamiento).toISOString().split('T')[0];
+    });
+
+    this.ventasSvc.getDetalleByVentaId(id).subscribe((data: any) => {
+      console.log(data);
+      this.detalleventa = data;
     });
 
 

@@ -64,15 +64,15 @@ export class DetalleComponent implements OnInit {
     this.productoSvc.getProductoById(id).subscribe((data: any) => {
       this.producto = data;
       this.plataformaSelected =
-        this.plataformaBindingsList.find( x => x.value === data.idPlataforma );
+        this.plataformaBindingsList.find( x => x.value === data.producto.idPlataforma );
       ;
       this.generoSelected =
-        this.generoBindingsList.find( x => x.value === data.idGenero )
+        this.generoBindingsList.find( x => x.value === data.producto.idGenero )
       ;
       this.clasificacionSelected =
-        this.clasificacionBindingsList.find( x => x.value === data.IdClasificacion )
+        this.clasificacionBindingsList.find( x => x.value === data.producto.idClasificacion )
       ;
-      this.fechaLanzamiento = new Date(data.fechaLanzamiento).toISOString().split('T')[0];
+      this.fechaLanzamiento = new Date(data.producto.fechaLanzamiento).toISOString().split('T')[0];
     });
 
 

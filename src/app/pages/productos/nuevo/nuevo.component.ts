@@ -18,25 +18,27 @@ export class NuevoComponent implements OnInit {
   PlataformaSelected = null;
 
   generoBindingsList = [
-    { value: 1, label: 'Acción' },
-    { value: 2, label: 'Disparos' },
-    { value: 3, label: 'Estrategia' },
-    { value: 4, label: 'Hack and Slash' },
-    { value: 5, label: 'Simulación' },
-    { value: 6, label: 'Deporte' },
-    { value: 7, label: 'Carreras' },
-    { value: 8, label: 'Aventura' },
-    { value: 9, label: 'Rol' },
+    { value: 1, label: 'Aventura' },
+    { value: 2, label: 'RPG' },
+    { value: 3, label: 'Modo Supervivencia' },
+    { value: 4, label: 'Acción' },
+    { value: 5, label: 'Disparos' },
+    { value: 6, label: 'Estrategia' },
+    { value: 7, label: 'Hack and Slash' },
+    { value: 8, label: 'Simulación' },
+    { value: 9, label: 'Deporte' },
+    { value: 10, label: 'Carreras' },
+    { value: 12, label: 'Rol' },
   ];
   generoSelected = null;
 
   clasificacionBindingsList = [
-    { value: 1, label: 'TODOS' },
     { value: 2, label: 'TODOS + 10' },
-    { value: 3, label: 'ADOLESCENTES' },
-    { value: 4, label: 'MADURO +17' },
-    { value: 5, label: 'ADULTOS ÚNICAMENTE +18' },
-    { value: 6, label: 'CLASIFICACIÓN PENDIENTE' },
+    { value: 3, label: 'TODOS' },
+    { value: 4, label: 'ADOLESCENTES' },
+    { value: 5, label: 'MADURO +17' },
+    { value: 6, label: 'ADULTOS ÚNICAMENTE +18' },
+    { value: 7, label: 'CLASIFICACIÓN PENDIENTE' },
   ];
   clasificacionSelected = null;
 

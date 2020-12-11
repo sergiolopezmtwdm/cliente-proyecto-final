@@ -42,11 +42,11 @@
           </thead>
           <tbody>
             <tr *ngFor="let item of ventasItems">
-              <th scope="row">{{item.id}}</th>
-              <td>{{item.cliente}}</td>
-              <td>{{item.total}}</td>
-              <td>{{item.formPago}}</td>
-              <td>{{item.fechaPedido | date:'yyyy/MM/dd'}}</td>
+              <th scope="row">{{item.id}}</th>
+              <td>{{item.cliente}}</td>
+              <td>{{item.total}}</td>
+              <td>{{item.formPago}}</td>
+              <td>{{item.fechaPedido | date:'yyyy/MM/dd'}}</td>
               <td>
                 <a [routerLink]="['/ventas/detalle', item.id]" class="btn btn-primary">Ver Detalle</a>
               </td>

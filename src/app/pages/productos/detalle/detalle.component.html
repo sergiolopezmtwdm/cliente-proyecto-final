@@ -103,24 +103,24 @@
           <div class="row">
             <div class="form-group col-md-6">
               <label for="name">Titulo</label>
-              <input type="text" class="form-control" name="titulo" id="titulo" ngModel="{{producto.titulo}}" autocomplete="off"
+              <input type="text" class="form-control" name="titulo" id="titulo" ngModel="{{producto.producto.titulo}}" autocomplete="off"
                  />
                  <!-- value={{producto.titulo}} -->
               <div class="validate"></div>
             </div>
             <div class="form-group col-md-6">
               <label for="name">SKU</label>
-              <input type="text" class="form-control" name="sku" id="sku" ngModel="{{producto.sku}}" autocomplete="off" />
+              <input type="text" class="form-control" name="sku" id="sku" ngModel="{{producto.producto.sku}}" autocomplete="off" />
               <div class="validate"></div>
             </div>
             <div class="form-group col-md-6">
               <label for="name">Costo</label>
-              <input type="number" class="form-control" name="costo" id="costo" ngModel="{{producto.costo}}" autocomplete="off" />
+              <input type="number" class="form-control" name="costo" id="costo" ngModel="{{producto.producto.costo}}" autocomplete="off" />
               <div class="validate"></div>
             </div>
             <div class="form-group col-md-6">
               <label for="name">Precio</label>
-              <input type="number" class="form-control" name="precioVenta" id="precioVenta" ngModel="{{producto.precioVenta}}"
+              <input type="number" class="form-control" name="precioVenta" id="precioVenta" ngModel="{{producto.producto.precioVenta}}"
                 autocomplete="off" />
               <div class="validate"></div>
             </div>
@@ -156,7 +156,7 @@
           </div>
           <div class="form-group">
             <label for="name">Descripción</label>
-            <textarea class="form-control" name="descripcion" id="descripcion" ngModel="{{producto.descripcion}}" rows="5" data-rule="required"
+            <textarea class="form-control" name="descripcion" id="descripcion" ngModel="{{producto.producto.descripcion}}" rows="5" data-rule="required"
               data-msg="" autocomplete="off"></textarea>
             <div class="validate"></div>
           </div>

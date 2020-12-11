@@ -2,24 +2,24 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-const endPoint: string = 'assets/json/productos.json';
-// const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product';
+// const endPoint: string = 'assets/json/productos.json';
+const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
 
-  constructor(private http: HttpClient) {    }
+  constructor(private http: HttpClient) { }
 
   getItems() {
     return this.http.get(endPoint);
   }
 
-  public getProductoById(id: string){
+  public getProductoById(id: string) {
     // return this.http.get(`${endPoint}/${id}`);
-    // return this.http.get(`${endPoint}/${id}`);
-    return this.http.get("assets/json/producto.json");
+    return this.http.get(`${endPoint}/${id}`);
+    // return this.http.get("assets/json/producto.json");
   }
 
   public updateProduct = (form: NgForm) => {
@@ -29,7 +29,7 @@ export class ProductosService {
     // this.http.post(`${endPoint}/UpdateProduct`,
     // formulario, {
     //   headers: new HttpHeaders({
-    //     "Content-Type": "application/json"
+    //     "Content-Type: "application/json"
     //   })
     // }).subscribe(response => {
     //   alert("insert correcto");
@@ -40,11 +40,42 @@ export class ProductosService {
   }
 
   public insertProduct = (form: NgForm) => {
+
+
+    // var producto: any = {
+    //   sku: form.value.sku,
+    //   titulo: form.value.titulo,
+    //   descripcion: form.value.descripcion,
+    //   idPlataforma: form.value.plataforma.value,
+    //   idGenero: form.value.genero.value,
+    //   idClasificacion: form.value.clasificacion.value,
+    //   imagen: "",
+    //   imagen2: "",
+    //   imagen3: "",
+    //   videoUrl: "",
+    //   costo: form.value.costo,
+    //   precioVenta: form.value.precioVenta,
+    //   fechaLanzamiento: form.value.fechaLanzamiento,
+    // };
+    // console.log("producto: ", JSON.stringify(producto));
+    form.value.imagen = "";
+    form.value.imagen2 = "";
+    form.value.imagen3 = "";
+    form.value.urlVideo = "";
+    form.value.idPlataforma = form.value.plataforma.value;
+    form.value.idGenero = form.value.genero.value;
+    form.value.idClasificacion = form.value.clasificacion.value;
+    form.value.edicion = "Standard";
+    delete form.value.plataforma;
+    delete form.value.genero;
+    delete form.value.clasificacion;
+    // console.log("producto: ", JSON.stringify(form.value));
+
     const formulario = JSON.stringify(form.value);
     console.log("formulario: ", formulario);
 
     this.http.post(`${endPoint}/InsertProduct`,
-    formulario, {
+      formulario, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
@@ -62,6 +93,5 @@ export class ProductosService {
       // this.invalidLogin = true;
       // this.modalReference.close();
     });
-
   }
 }
