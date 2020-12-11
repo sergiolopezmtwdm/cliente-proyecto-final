@@ -9,9 +9,11 @@ import { ClientesService } from 'src/app/services/core/clientes.service';
 })
 export class DetalleComponent implements OnInit {
   item: any;
+  id:number;
 
   constructor(private router: ActivatedRoute, private clientesSvc: ClientesService) {
     this.router.params.subscribe((param: any) => {
+      this.id = parseInt(param['id']);
       this.getItemById(param['id']);
     }
     );
