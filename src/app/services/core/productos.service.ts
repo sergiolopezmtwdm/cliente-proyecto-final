@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-const endPoint: string = 'assets/json/productos.json';
-// const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product';
+//const endPoint: string = 'assets/json/productos.json';
+const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,19 @@ export class ProductosService {
 
   getItems() {
     return this.http.get(endPoint);
+  }
+
+  getAllGames(){
+    return this.http.get(`${endPoint}`);
+  }
+
+  /**
+   * 
+   * @param criterio 
+   */
+  getGamesBycriterio(criterio: string) {
+    return this.http.get(`${endPoint}/titulo/${criterio}`);
+
   }
 
   public getProductoById(id: string){

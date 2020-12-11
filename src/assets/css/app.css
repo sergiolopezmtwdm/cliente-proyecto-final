@@ -1,64 +1,70 @@
-
-
 /*--------------------------------------------------------------
 # Sección SIDEBAR
 --------------------------------------------------------------*/
+
 .active {
-  /* color: #37b3ed !important; */
-  color: #FFFF !important;
+    /* color: #37b3ed !important; */
+    color: #FFFF !important;
 }
-.active > i{
-  color: #37b3ed !important;
+
+.active>i {
+    color: #37b3ed !important;
 }
 
 a>span.icon-Contenedor-Logo {
-  /* color: #ea591d; */
-  /* color: #633974; */
-  /* color: #e72586; */
-  font-size: 200px;
+    /* color: #ea591d; */
+    /* color: #633974; */
+    /* color: #e72586; */
+    font-size: 200px;
 }
 
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
 
 /*--------------------------------------------------------------
 # Sección FOOTER
 --------------------------------------------------------------*/
 
 #footer {
-  padding: 15px;
-  color: #f4f6fd;
-  font-size: 14px;
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  z-index: 9999;
-  background: #040b14;
+    padding: 15px;
+    color: #f4f6fd;
+    font-size: 14px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+    z-index: 9999;
+    background: #040b14;
 }
 
 #footer .copyright {
-  text-align: center;
+    text-align: center;
 }
 
 #footer .credits {
-  padding-top: 5px;
-  text-align: center;
-  font-size: 13px;
-  color: #eaebf0;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 13px;
+    color: #eaebf0;
 }
 
 @media (max-width: 1199px) {
-  #footer {
-      position: static;
-      width: auto;
-      padding-right: 20px 15px;
-  }
+    #footer {
+        position: static;
+        width: auto;
+        padding-right: 20px 15px;
+    }
 }
 
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
 
 /*--------------------------------------------------------------
 # TABLAS
 --------------------------------------------------------------*/
+
 td>a>i {
     /* color: red; */
     font-size: 25px;
@@ -92,7 +98,9 @@ td>i.icon-Contenedor-PC {
     color: gray;
 }
 
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
 
 /*--------------------------------------------------------------
 # BOTONES
@@ -101,6 +109,7 @@ td>i.icon-Contenedor-PC {
 .ircompra>.btn {
     margin-left: 0%!important;
 }
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -175,19 +184,14 @@ td>i.icon-Contenedor-PC {
 
 /* Sección detalle de juegos */
 
-
-
-
 .bodyTest {
-    margin-left: 300px;
     height: auto;
     background: linear-gradient(to bottom right, rgb(65, 26, 117), rgb(92, 87, 87));
     padding-bottom: 2em;
 }
 
-
-.nav-owl{
-  font-size: 1.5em;
+.nav-owl {
+    font-size: 1.5em;
 }
 
 .xbox {
@@ -198,6 +202,34 @@ td>i.icon-Contenedor-PC {
     /* padding-bottom: 2em; */
 }
 
-.xboxcolor h2{
-  color: #107C10!important;
+.pc {
+    height: auto;
+    background: linear-gradient(to bottom right, #FFFFFF, #F2F2F2);
+    /* background: linear-gradient(to bottom right, #FFFFFF, #CCCCCC); */
+    /* background-color: #F2F2F2; */
+    /* padding-bottom: 2em; */
+}
+
+.play {
+    height: auto;
+    background: linear-gradient(to bottom right, #FFFFFF, #F2F2F2);
+    /* background: linear-gradient(to bottom right, #FFFFFF, #CCCCCC); */
+    /* background-color: #F2F2F2; */
+    /* padding-bottom: 2em; */
+}
+
+#xbox {
+    height: 90vh;
+}
+
+#pc {
+    height: 90vh;
+}
+
+#play {
+    height: 90vh;
+}
+
+.xboxcolor h2 {
+    color: #107C10!important;
 }
