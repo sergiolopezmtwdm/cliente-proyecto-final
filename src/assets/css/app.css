@@ -1,3 +1,5 @@
+
+
 /*--------------------------------------------------------------
 # Sección SIDEBAR
 --------------------------------------------------------------*/
@@ -191,6 +193,7 @@ td>i.icon-Contenedor-PC {
 .xbox {
     height: auto;
     background: linear-gradient(to bottom right, #FFFFFF, #F2F2F2);
+    /* background: linear-gradient(to bottom right, #FFFFFF, #CCCCCC); */
     /* background-color: #F2F2F2; */
     /* padding-bottom: 2em; */
 }

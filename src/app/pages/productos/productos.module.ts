@@ -5,6 +5,8 @@ import { ProductosRouterModule } from './productos.routes';
 import { NuevoComponent } from './nuevo/nuevo.component';
 import { ListaComponent } from './lista/lista.component';
 import { DetalleComponent } from './detalle/detalle.component';
+import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -12,7 +14,9 @@ import { DetalleComponent } from './detalle/detalle.component';
   declarations: [ProductosComponent, NuevoComponent, ListaComponent, DetalleComponent],
   imports: [
     CommonModule,
-    ProductosRouterModule
+    ProductosRouterModule,
+    FormsModule,
+    NgSelectModule
   ]
 })
 export class ProductosModule { }

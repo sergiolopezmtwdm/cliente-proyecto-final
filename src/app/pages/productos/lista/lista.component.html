@@ -17,16 +17,15 @@
 
   <!-- ======= About Section ======= -->
  <section id="about" class="about">
-    <div class="container">      
-
+    <div class="container">
       <div class="section-title">
-        <h2>Lista</h2>
+        <h2>Lista de productos</h2>
         <p></p>
       </div>
-      
+      {{productoItems | json}}
       <div class="row">
         <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <div class="text-right">              
+            <div class="text-right">
               <a class="btn btn-md btn-info" [routerLink]="['/productos/nuevo']" fragmente="tuId">Nuevo</a>
             </div>
             <table class="table">
@@ -36,66 +35,27 @@
                     <th scope="col">Título</th>
                     <th scope="col">Plataforma</th>
                     <th scope="col">Género</th>
-                    <th scope="col">Estatus</th>
+                    <!-- <th scope="col">Estatus</th> -->
                     <th scope="col">Fecha Lanzamiento</th>
-                    <th scope="col">Fecha</th>
+                    <th scope="col">Fecha creación</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">00001</th>
-                    <td>CyberPunk 2077</td>
-                    <td>Xbox Series X</td>
-                    <td>Open World</td>
-                    <td><strong>Activo</strong></td>
-                    <td>10/11/2020</td>
-                    <td>01/01/2020</td>
-                    <td><a href="#" class="btn btn-sm btn-primary">Ver Detalle</a></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">00002</th>
-                    <td>CyberPunk 2077</td>
-                    <td>PS5</td>
-                    <td>Open World</td>
-                    <td><strong>Activo</strong></td>
-                    <td>10/11/2020</td>
-                    <td>01/01/2020</td>
-                    <td><a href="#" class="btn btn-sm btn-primary">Ver Detalle</a></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">00003</th>
-                    <td>CyberPunk 2077</td>
-                    <td>PC</td>
-                    <td>Open World</td>
-                    <td><strong>Activo</strong></td>
-                    <td>10/11/2020</td>
-                    <td>01/01/2020</td>
-                    <td><a href="#" class="btn btn-sm btn-primary">Ver Detalle</a></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">00004</th>
-                    <td>CyberPunk 2077</td>
-                    <td>Xbox One</td>
-                    <td>Open World</td>
-                    <td><strong>Activo</strong></td>
-                    <td>10/11/2020</td>
-                    <td>01/01/2020</td>
-                    <td><a href="#" class="btn btn-sm btn-primary">Ver Detalle</a></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">00003</th>
-                    <td>CyberPunk 2077</td>
-                    <td>PS4</td>
-                    <td>Open World</td>
-                    <td><strong>Activo</strong></td>
-                    <td>10/11/2020</td>
-                    <td>01/01/2020</td>
-                    <td><a href="#" class="btn btn-sm btn-primary">Ver Detalle</a></td>
+                  <tr *ngFor="let item of productoItems">
+                    <th scope="row">{{item.id}}</th>
+                    <td>{{item.titulo}}</td>
+                    <td>{{item.plataforma}}</td>
+                    <td>{{item.genero}}</td>
+                    <td>{{item.fechaLanzamiento | date:'yyyy/MM/dd'}}</td>
+                    <td>{{item.fechaCreacion | date:'yyyy/MM/dd HH:mm:ss'}}</td>
+                    <td>
+                      <!-- <a href="#" class="btn btn-sm btn-primary">Ver Detalle</a> -->
+                      <a [routerLink]="['/productos/detalle', item.id]" class="btn btn-primary">Ver Detalle</a>
+                    </td>
                   </tr>
                 </tbody>
               </table>
-              
           </div>
       </div>
     </div>

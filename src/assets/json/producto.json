@@ -1,0 +1,22 @@
+{
+  "id":1,
+  "sku":"74521851211",
+  "titulo":"CyberPunk 2077",
+  "descripcion":"Cyberpunk 2077",
+  "idPlataforma":2,
+  "plataforma":"Xbox Series X",
+  "idGenero":1,
+  "genero":"Aventura",
+  "IdClasificacion":1,
+  "clasificacion":"Adolecentes",
+  "imagen":"c:\\",
+  "imagen2":"",
+  "imagen3":"",
+  "urlVideo":"",
+  "costo":999.0000,
+  "edicion":"Estandar",
+  "precioVenta":1199.0000,
+  "fechaLanzamiento":"2020-12-10T00:00:00",
+  "fechaActualizacion":"1900-01-01T00:00:00",
+  "fechaCreacion":"2020-12-05T00:00:00"
+}
