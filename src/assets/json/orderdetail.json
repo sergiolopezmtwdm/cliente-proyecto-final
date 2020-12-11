@@ -1,0 +1,11 @@
+[
+  {
+      "id": 1,
+      "idPedido": 0,
+      "titulo": "CyberPunk 2077",
+      "codigo": "XYZ-ABC-CDE",
+      "subTotal": 1199,
+      "fecha": "2020-12-07T00:00:00",
+      "idProducto": 1
+  }
+]

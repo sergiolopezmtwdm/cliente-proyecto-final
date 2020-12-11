@@ -12,7 +12,7 @@ export class NuevoComponent implements OnInit {
 
   plataformaBindingsList = [
     { value: 1, label: 'Xbox' },
-    { value: 2, label: 'PlayStation' },
+    { value: 2, label: 'PS' },
     { value: 3, label: 'PC' },
   ];
   PlataformaSelected = null;

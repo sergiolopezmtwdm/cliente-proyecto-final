@@ -15,7 +15,7 @@ export class DetalleComponent implements OnInit {
 
   plataformaBindingsList = [
     { value: 1, label: 'Xbox' },
-    { value: 2, label: 'PlayStation' },
+    { value: 2, label: 'PS' },
     { value: 3, label: 'PC' },
   ];
   plataformaSelected = null;
@@ -79,10 +79,7 @@ export class DetalleComponent implements OnInit {
   }
 
   updateProducto = (form: NgForm) => {
-    // const formulario = JSON.stringify(form.value);
-    // console.log("formulario: ", formulario);
     this.productoSvc.updateProduct(form);
-
   }
 
 }

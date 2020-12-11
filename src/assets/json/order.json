@@ -1,0 +1,14 @@
+{
+  "pedido": {
+      "cliente": "Fabricio Magaña Ruiz",
+      "total": 1199.0000,
+      "formPago": null,
+      "estatus": true,
+      "cancelado": false,
+      "fechaCancelacion": "1900-01-01T00:00:00",
+      "motivoCancelacion": "",
+      "nota": "",
+      "fechaPedido": "2020-12-08T00:29:40.417",
+      "id": 3
+  }
+}

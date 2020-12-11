@@ -38,5 +38,10 @@
     "title": "Ventas",
     "icon": "bx bx-money",
     "route": "ventas/lista"
+  },
+  {
+    "title": "Perfil",
+    "icon": "bx bx-user",
+    "route": "componentes/perfil"
   }
 ]

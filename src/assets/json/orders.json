@@ -1,0 +1,26 @@
+[
+  {
+      "cliente": "Fabricio Magaña Ruiz",
+      "total": 1199,
+      "formPago": "TC",
+      "estatus": true,
+      "cancelado": false,
+      "fechaCancelacion": "1900-01-01T00:00:00",
+      "motivoCancelacion": "",
+      "nota": "",
+      "fechaPedido": "2020-12-07T00:00:00",
+      "id": 1
+  },
+  {
+    "cliente": "Fabricio Magaña Ruiz",
+    "total": 1199,
+    "formPago": "TC",
+    "estatus": true,
+    "cancelado": false,
+    "fechaCancelacion": "1900-01-01T00:00:00",
+    "motivoCancelacion": "",
+    "nota": "",
+    "fechaPedido": "2020-12-07T00:00:00",
+    "id": 1
+  }
+]
