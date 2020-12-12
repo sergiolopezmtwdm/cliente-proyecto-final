@@ -15,17 +15,17 @@
                             <a>{{producto.plataforma}}</a>
                             <a class="precio" href="">${{producto.precioVenta}}</a>
                         </div>
-                        <div class="icn_comprar icn_acciones">
-                            <!-- <a (click)="addCar(card.id)" id="addcart" href=""><i  class='bx bx-cart'></i></a> -->
-                            <i (click)="addCar(producto.id)" class='bx bx-cart addcart'></i>
-                            <!-- <a (click)="addWhishList(card.id)" id="addWhish" href=""><i class='bx bx-heart'></i></a> -->
-                            <i (click)="addWhishList(producto.id)" class='bx bx-heart addwish'></i>
-                            <!-- <a (click)="addWhishList(card.id)" href=""><i class='bx bx-heart'></i></a> -->
-                        </div>
+
 
                     </div>
                 </a>
-
+                <div class="icn_comprar icn_acciones">
+                    <!-- <a (click)="addCar(card.id)" id="addcart" href=""><i  class='bx bx-cart'></i></a> -->
+                    <i (click)="addCar(producto.id)" class='bx bx-cart addcart'></i>
+                    <!-- <a (click)="addWhishList(card.id)" id="addWhish" href=""><i class='bx bx-heart'></i></a> -->
+                    <i (click)="addWhishList(producto.id)" class='bx bx-heart addwish'></i>
+                    <!-- <a (click)="addWhishList(card.id)" href=""><i class='bx bx-heart'></i></a> -->
+                </div>
             </ng-template>
         </owl-carousel-o>
 
