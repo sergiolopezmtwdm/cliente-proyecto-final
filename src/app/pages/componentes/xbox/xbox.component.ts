@@ -3,6 +3,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Subscription } from 'rxjs';
 import { ProductosService } from 'src/app/services/core/productos.service';
 import { SearchService } from 'src/app/services/core/search.service';
+import { CarritoService } from 'src/app/services/core/carrito.service';
 
 @Component({
   selector: 'componentes-xbox',
@@ -20,7 +21,7 @@ export class XboxComponent implements OnInit, OnDestroy {
   gamesList: any[] = [];
   subscription$: Subscription;
 
-  constructor(private svcSearch: SearchService, private svcProductos: ProductosService) { 
+  constructor(private svcSearch: SearchService, private svcProductos: ProductosService, private carritoSvc: CarritoService) { 
 
 
 
@@ -59,6 +60,14 @@ export class XboxComponent implements OnInit, OnDestroy {
     this.svcProductos.getAllGames().subscribe((data: any[]) => {
       this.gamesList = data;
     });
+  }
+
+  addWhishList(id: string) {
+    this.carritoSvc.addWishList(id);
+  }
+
+  addCar(id: string) {
+    this.carritoSvc.addCarrito(id);
   }
 
   searchCriterio(criterio) {
