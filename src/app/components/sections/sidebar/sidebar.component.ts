@@ -96,6 +96,7 @@ export class SidebarComponent implements OnInit, OnDestroy  {
     localStorage.removeItem("refreshToken");
     localStorage.removeItem("rol");
     // this.oyenteSvc.sendRol("anonimo")
+    this.oyenteSvc.sendNombre("");
     localStorage.removeItem("id");
     this.sidebarSvc.getItemsAnonimo().subscribe((data: any) => {
       this.menuItems = data;

@@ -10,9 +10,9 @@ import { ProductosService } from 'src/app/services/core/productos.service';
 export class DetalleComponent implements OnInit {
   producto: any;
 
-  id:number;
+  id: number;
 
-  constructor(private router: ActivatedRoute, private productoSvc: ProductosService) { 
+  constructor(private router: ActivatedRoute, private productoSvc: ProductosService) {
 
     this.router.params.subscribe((param: any) => {
       this.id = parseInt(param['id']);
@@ -24,7 +24,6 @@ export class DetalleComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 
   getProductoById(id: string) {
     // this.productoSvc.getProductoById(id).subscribe((data: any[]) => {

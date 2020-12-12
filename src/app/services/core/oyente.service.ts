@@ -9,6 +9,7 @@ export class OyenteService {
 
   private subject$ = new Subject<string>();
   private rol$ = new Subject<string>();
+  private nombre$ = new Subject<string>();
 
   constructor(private router: Router) { }
 
@@ -37,5 +38,13 @@ export class OyenteService {
 
   onListenRol(): Observable<string> {
     return this.rol$.asObservable();
+  }
+
+  sendNombre(nombre: string){
+    this.nombre$.next(nombre);
+  }
+
+  onListenNombre(): Observable<string> {
+    return this.nombre$.asObservable();
   }
 }

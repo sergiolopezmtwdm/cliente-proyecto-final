@@ -16,6 +16,8 @@ export class CarritoComponent implements OnInit {
   items: any[] = [];
   total: number;
 
+  modalReference: any;
+
   constructor(private router: Router, private modalService: NgbModal, private carritoSvc: CarritoService, private productoSvc: ProductosService, private loginSvc: LoginService) {
     this.getItems();
     // this.getCarritoDetalle();
@@ -27,7 +29,13 @@ export class CarritoComponent implements OnInit {
   }
 
   open(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+    // this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+    //   this.closeResult = `Closed with: ${result}`;
+    // }, (reason) => {
+    //   this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    // });
+    this.modalReference = this.modalService.open(content);
+    this.modalReference.result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -68,8 +76,9 @@ export class CarritoComponent implements OnInit {
     console.log(JSON.stringify(orden));
 
     this.carritoSvc.crearOrden(orden).subscribe(response => {
+      this.modalReference.close();
       alert("Se ha realizado su pedido exitosamente");
-      this.router.navigate(["/"]);
+      this.router.navigate(["/componentes/perfil"]);
       this.vaciarCarrito();
     }, err => {
       alert("Su tarjeta no paso");

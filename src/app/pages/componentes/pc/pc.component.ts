@@ -1,7 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Subscription } from 'rxjs';
-import { OyenteService } from 'src/app/services/core/oyente.service';
 import { ProductosService } from 'src/app/services/core/productos.service';
 
 @Component({
@@ -9,26 +7,14 @@ import { ProductosService } from 'src/app/services/core/productos.service';
   templateUrl: './pc.component.html',
   styleUrls: ['./pc.component.scss']
 })
-export class PcComponent implements OnInit, OnDestroy {
+export class PcComponent implements OnInit {
   criterio: string;
 
   gamesList: any[] = [];
-  subscription$: Subscription;
 
-  constructor(private oyenteSvc: OyenteService, private svcProductos: ProductosService) {
+  constructor(private svcProductos: ProductosService) {
 
     this.getAllData();
-
-    this.subscription$ = this.oyenteSvc.onListenCriterio().subscribe((criterio: string) => {
-
-      if (criterio != '') {
-        this.searchCriterio(criterio);
-      } else {
-        this.getAllData();
-      }
-      console.log('La subscripción es: ', criterio);
-
-    });
   }
 
   ngOnInit(): void {
@@ -38,14 +24,6 @@ export class PcComponent implements OnInit, OnDestroy {
     this.svcProductos.getAllGames().subscribe((data: any[]) => {
       this.gamesList = data;
     });
-  }
-
-  searchCriterio(criterio) {
-    console.log('El criterio es: ', criterio);
-    this.svcProductos.getGamesBycriterio(criterio).subscribe((data: any[]) => {
-      this.gamesList = data;
-    });
-
   }
 
   customOptions: OwlOptions = {
@@ -73,10 +51,6 @@ export class PcComponent implements OnInit, OnDestroy {
       }
     },
     nav: true
-  }
-
-  ngOnDestroy() {
-    this.subscription$.unsubscribe();
   }
 
 }

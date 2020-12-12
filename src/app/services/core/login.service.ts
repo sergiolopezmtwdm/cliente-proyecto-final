@@ -53,6 +53,7 @@ export class LoginService {
     const refreshToken = (<any>response).refreshToken;
     const rol = (<any>response).rol;
     this.oyenteSvc.sendRol(rol);
+    this.oyenteSvc.sendNombre((<any>response).nombreCompleto);
     const id = (<any>response).id;
     localStorage.setItem("jwt", token);
     localStorage.setItem("refreshToken", refreshToken);

@@ -1,7 +1,5 @@
-import { Component, OnDestroy, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { Subscription } from 'rxjs';
-import { OyenteService } from 'src/app/services/core/oyente.service';
 import { ProductosService } from 'src/app/services/core/productos.service';
 import { CarritoService } from 'src/app/services/core/carrito.service';
 
@@ -10,7 +8,7 @@ import { CarritoService } from 'src/app/services/core/carrito.service';
   templateUrl: './xbox.component.html',
   styleUrls: ['./xbox.component.scss']
 })
-export class XboxComponent implements OnInit, OnDestroy {
+export class XboxComponent implements OnInit {
 
   //Salida, objetos capaces de emitir un evento(EventEmitter)
   @Output() onClickMenu: EventEmitter<any> = new EventEmitter();
@@ -19,25 +17,9 @@ export class XboxComponent implements OnInit, OnDestroy {
   count = 0;
 
   gamesList: any[] = [];
-  subscription$: Subscription;
 
-  constructor(private oyenteSvc: OyenteService, private svcProductos: ProductosService, private carritoSvc: CarritoService) {
-
-
-
+  constructor(private svcProductos: ProductosService, private carritoSvc: CarritoService) {
     this.getAllData();
-
-    this.subscription$ = this.oyenteSvc.onListenCriterio().subscribe((criterio: string) => {
-
-      if (criterio != '') {
-        this.searchCriterio(criterio);
-      } else {
-        this.getAllData();
-      }
-      console.log('La subscripción es: ', criterio);
-
-    });
-
   }
 
   ngOnInit(): void {
@@ -70,14 +52,6 @@ export class XboxComponent implements OnInit, OnDestroy {
     this.carritoSvc.addCarrito(id);
   }
 
-  searchCriterio(criterio) {
-    console.log('El criterio es: ', criterio);
-    this.svcProductos.getGamesBycriterio(criterio).subscribe((data: any[]) => {
-      this.gamesList = data;
-    });
-
-  }
-
   customOptions: OwlOptions = {
     loop: true,
     autoplay: true,
@@ -108,10 +82,6 @@ export class XboxComponent implements OnInit, OnDestroy {
       }
     },
     nav: true
-  }
-
-  ngOnDestroy() {
-    this.subscription$.unsubscribe();
   }
 
 }
