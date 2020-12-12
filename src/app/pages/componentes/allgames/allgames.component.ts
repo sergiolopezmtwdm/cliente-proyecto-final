@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { OyenteService } from 'src/app/services/core/oyente.service';
 import { ProductosService } from 'src/app/services/core/productos.service';
+import { CarritoService } from 'src/app/services/core/carrito.service';
 
 @Component({
   selector: 'componentes-allgames',
@@ -16,7 +17,9 @@ export class AllgamesComponent implements OnInit, OnDestroy {
   gamesList: any[] = [];
   subscription$: Subscription;
 
-  constructor(private oyenteSvc: OyenteService, private svcProductos: ProductosService) {
+  constructor(private oyenteSvc: OyenteService, private svcProductos: ProductosService, private carritoSvc: CarritoService) {
+
+
     this.getAllData();
     this.subscription$ = this.oyenteSvc.onListenCriterio().subscribe((criterio: string) => {
 
@@ -66,6 +69,14 @@ export class AllgamesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+  }
+
+  addWhishList(id: string) {
+    this.carritoSvc.addWishList(id);
+  }
+
+  addCar(id: string) {
+    this.carritoSvc.addCarrito(id);
   }
 
 }
