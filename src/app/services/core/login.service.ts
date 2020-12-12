@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { OyenteService } from './oyente.service';
 
 const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/login';
 
@@ -9,7 +10,7 @@ const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/log
 })
 export class LoginService {
 
-  constructor(private jwtHelper: JwtHelperService, private http: HttpClient) { }
+  constructor(private jwtHelper: JwtHelperService, private http: HttpClient, private oyenteSvc: OyenteService) { }
 
   isUserAuthenticated() {
     const token: string = localStorage.getItem("jwt");
@@ -51,6 +52,7 @@ export class LoginService {
     const token = (<any>response).token;
     const refreshToken = (<any>response).refreshToken;
     const rol = (<any>response).rol;
+    this.oyenteSvc.sendRol(rol);
     const id = (<any>response).id;
     localStorage.setItem("jwt", token);
     localStorage.setItem("refreshToken", refreshToken);

@@ -33,7 +33,7 @@ export class CarritoService {
     console.log("formulario: ", datosDeEnvio);
 
     this.http.post(`${endPoint}/add`,
-    datosDeEnvio, {
+      datosDeEnvio, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
@@ -54,8 +54,8 @@ export class CarritoService {
     const datosDeEnvio = JSON.stringify(addWishItem);
     console.log("formulario: ", datosDeEnvio);
 
-    this.http.post(`${endPoint2}`,
-    datosDeEnvio, {
+    this.http.post(`${endPoint}`,
+      datosDeEnvio, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
@@ -65,4 +65,23 @@ export class CarritoService {
       alert("No se pudo agregar el producto");
     });
   }
+
+  public deleteCarritoItem = (id: string) => {
+    // var item: any = {
+    //   uid: id,
+    // };
+    // const datosDeEnvio = JSON.stringify(item);
+    // console.log("formulario: ", datosDeEnvio);
+
+    // this.http.delete(`${endPoint}/remove`,
+    // datosDeEnvio)
+    // }).subscribe(response => {
+    //   alert("Se ha agregado correctamente");
+    // }, err => {
+    //   alert("No se pudo agregar el producto");
+    // });
+    this.http.delete(`${endPoint}/remove/${id}`)
+      .subscribe(() => { alert("eliminación correcta") });
+  }
+
 }

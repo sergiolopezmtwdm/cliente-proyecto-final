@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Subscription } from 'rxjs';
+import { OyenteService } from 'src/app/services/core/oyente.service';
 import { ProductosService } from 'src/app/services/core/productos.service';
-import { SearchService } from 'src/app/services/core/search.service';
 
 @Component({
   selector: 'componentes-xbox',
@@ -20,13 +20,13 @@ export class XboxComponent implements OnInit, OnDestroy {
   gamesList: any[] = [];
   subscription$: Subscription;
 
-  constructor(private svcSearch: SearchService, private svcProductos: ProductosService) { 
+  constructor(private oyenteSvc: OyenteService, private svcProductos: ProductosService) {
 
 
 
     this.getAllData();
 
-    this.subscription$ = this.svcSearch.onListenCriterio().subscribe((criterio: string) => {
+    this.subscription$ = this.oyenteSvc.onListenCriterio().subscribe((criterio: string) => {
 
       if (criterio != '') {
         this.searchCriterio(criterio);
@@ -45,7 +45,7 @@ export class XboxComponent implements OnInit, OnDestroy {
   onclick_menu(index: number, item: any){
     //console.log('El indice seleccionado en el hijo es: ', index);
     //console.log('El item seleccionado en hijo es: ', item);
-    
+
     //Regresar al componente papá (app.component), pueda ser escuchado por el componente papá
     this.onClickMenu.emit({
       index,

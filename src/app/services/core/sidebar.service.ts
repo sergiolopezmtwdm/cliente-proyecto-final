@@ -23,16 +23,17 @@ export class SidebarService {
     return this.http.get(`${endPoint}/anonimo`);
   }
 
-  getItemsAutentificado() {
+  getItemsAutentificado(rol) {
     // if (this.loginSvc.isUserAuthenticated()) {
     //   return this.http.get(endPoint);
     // }
     // else {
     //   return this.http.get(endPoint2);
     // }
-    var rol = this.loginSvc.getRol();
+    // var rol = this.loginSvc.getRol();
     // alert("obteniendo menu del rol: " + rol);
     // alert(`${endPoint}/${rol}`);
+    console.log(`llamando a ${endPoint}/${rol}`);
     return this.http.get(`${endPoint}/${rol}`);
   }
 

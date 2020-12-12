@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Subscription } from 'rxjs';
+import { OyenteService } from 'src/app/services/core/oyente.service';
 import { ProductosService } from 'src/app/services/core/productos.service';
-import { SearchService } from 'src/app/services/core/search.service';
 
 @Component({
   selector: 'componentes-play-station',
@@ -16,11 +16,11 @@ export class PlayStationComponent implements OnInit, OnDestroy {
   gamesList: any[] = [];
   subscription$: Subscription;
 
-  constructor(private svcSearch: SearchService, private svcProductos: ProductosService) {
+  constructor(private oyenteSvc: OyenteService, private svcProductos: ProductosService) {
 
     this.getAllData();
 
-    this.subscription$ = this.svcSearch.onListenCriterio().subscribe((criterio: string) => {
+    this.subscription$ = this.oyenteSvc.onListenCriterio().subscribe((criterio: string) => {
 
       if (criterio != '') {
         this.searchCriterio(criterio);
@@ -28,11 +28,7 @@ export class PlayStationComponent implements OnInit, OnDestroy {
         this.getAllData();
       }
       console.log('La subscripción es: ', criterio);
-
     });
-
-
-
    }
 
   ngOnInit(): void {
@@ -51,7 +47,7 @@ export class PlayStationComponent implements OnInit, OnDestroy {
     });
 
   }
-  
+
 
 
   customOptions: OwlOptions = {

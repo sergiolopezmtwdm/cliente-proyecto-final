@@ -17,32 +17,31 @@ declare var App: any;
 export class AppComponent implements OnInit {
   title = 'cliente-angular';
 
-  constructor(private sidebarSvc: SidebarService, private loginSvc: LoginService, private homeSvc: HomeService) {}
+  constructor(private sidebarSvc: SidebarService, private loginSvc: LoginService, private homeSvc: HomeService) { }
   sidebarItems: any[] = [];
 
-  ngOnInit(){
+  ngOnInit() {
     App.init();
     this.getData();
   }
 
   getData() {
-    if(!this.loginSvc.isUserAuthenticated()){
-      this.sidebarSvc.getItemsAnonimo().subscribe((data:any)=>{
+    if (!this.loginSvc.isUserAuthenticated()) {
+      this.sidebarSvc.getItemsAnonimo().subscribe((data: any) => {
         this.sidebarItems = data;
       });
-    }else{
-        this.sidebarSvc.getItemsAutentificado().subscribe((data:any)=>{
-          this.sidebarItems = data;
-        });
-
+    } else {
+      this.sidebarSvc.getItemsAutentificado(this.loginSvc.getRol()).subscribe((data: any) => {
+        this.sidebarItems = data;
+      });
     }
 
   }
 
-  listenChildMenuEvent(eventArgs: any){
+  listenChildMenuEvent(eventArgs: any) {
     console.log('Los datos emitidos por el componente hijo son: ', eventArgs);
     console.log('El indice seleccionado en el componente pap+a es: ', eventArgs.index);
-      console.log('El item seleccionado en el componente hijo es: ', eventArgs.name);
+    console.log('El item seleccionado en el componente hijo es: ', eventArgs.name);
   }
 
 
