@@ -15,6 +15,22 @@ export class ProductosService {
 
   constructor(private http: HttpClient) { }
 
+  updateImagen(id: string, name: string){
+    // parseInt((id), name
+    var item: any = {
+      idProducto: parseInt(id),
+      campo: 'imagen',
+      ruta: name
+    };
+    
+    return this.http.post(`${endPoint}/image/update`,
+    item, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    });
+  }
+
   getItems() {
     return this.http.get(endPoint);
   }
@@ -25,7 +41,7 @@ export class ProductosService {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
-    })
+    });
   }
 
   getAllGames() {

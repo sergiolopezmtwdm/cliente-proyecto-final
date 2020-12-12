@@ -7,6 +7,7 @@ import { ListaComponent } from './lista/lista.component';
 import { DetalleComponent } from './detalle/detalle.component';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 
 
@@ -16,7 +17,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     CommonModule,
     ProductosRouterModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    NgxDropzoneModule
   ]
 })
 export class ProductosModule { }

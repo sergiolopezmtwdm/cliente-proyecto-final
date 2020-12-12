@@ -14,17 +14,23 @@ import { PcComponent } from './pc/pc.component';
 import { ComponentesComponent } from './componentes.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HomeComponent } from './home/home.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+// DropZone Modules
+// import { NgxDropzoneModule } from 'ngx-dropzone';
+// import { HtmlPipe } from './pipes/html.pipe';
 
 // CarouselComponent
+// HtmlPipe,
 @NgModule({
   declarations: [
-    ComponentesComponent, PerfilComponent, CarritoComponent, AllgamesComponent, WishlistComponent, DetalleComponent, XboxComponent, PlayStationComponent, PcComponent, HomeComponent
+    ComponentesComponent, PerfilComponent, CarritoComponent, AllgamesComponent, WishlistComponent, DetalleComponent, XboxComponent, PlayStationComponent, PcComponent, HomeComponent,
   ],
   imports: [
     CommonModule,
     ComponentesRouterModule,
     FormsModule,
-    CarouselModule
+    CarouselModule,
+    NgxDropzoneModule
   ]
 })
 export class ComponentesModule { }

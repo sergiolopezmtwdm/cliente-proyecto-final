@@ -29,7 +29,7 @@ export class PlayStationComponent implements OnInit, OnDestroy {
       }
       console.log('La subscripción es: ', criterio);
     });
-   }
+  }
 
   ngOnInit(): void {
   }

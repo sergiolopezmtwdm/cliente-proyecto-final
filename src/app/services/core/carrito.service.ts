@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import { LoginService } from './login.service';
 
 // const endPoint: string = 'http://localhost:3000/v1/carrito/getAll/1/5/2';
-const endPoint: string = 'http://localhost:3000/v1/carrito/';
+const endPoint: string = 'http://localhost:3001/v1/carrito/';
 const endPoint2: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product/wishlist/';
+const endPoint3: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/order/cart';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,17 @@ export class CarritoService {
 
   }
 
+  public crearOrden(orden: any) {
+    console.log("entrando al servicio con: " + JSON.stringify(orden));
+    // alert("LLAMANDO POST CON: "+ JSON.stringify(orden));
+    return this.http.post(`${endPoint3}`,
+      orden, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    });
+  }
+
   public addWishList = (idProduct: string) => {
     var addWishItem: any = {
       idCliente: parseInt(this.loginSvc.getId()),
@@ -67,21 +79,15 @@ export class CarritoService {
   }
 
   public deleteCarritoItem = (id: string) => {
-    // var item: any = {
-    //   uid: id,
-    // };
-    // const datosDeEnvio = JSON.stringify(item);
-    // console.log("formulario: ", datosDeEnvio);
-
-    // this.http.delete(`${endPoint}/remove`,
-    // datosDeEnvio)
-    // }).subscribe(response => {
-    //   alert("Se ha agregado correctamente");
-    // }, err => {
-    //   alert("No se pudo agregar el producto");
-    // });
-    this.http.delete(`${endPoint}/remove/${id}`)
-      .subscribe(() => { alert("eliminación correcta") });
+    var item: any = {
+      uid: id,
+    };
+    return this.http.post(`${endPoint}/remove`,
+      item, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    });
   }
 
 }

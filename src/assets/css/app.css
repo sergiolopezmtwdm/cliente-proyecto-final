@@ -74,8 +74,12 @@ td>a>i.bx-time {
     color: #ea591d;
 }
 
-td>a>i.bx-trash {
+/* td>a>i.bx-trash {
     color: red;
+} */
+i.bx-trash {
+  color: red;
+  cursor: pointer;
 }
 
 td>i {
@@ -307,3 +311,5 @@ i.addwish {
 .text-secundary-color {
   color: #e72586
 }
+
+

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { VariableAst } from '@angular/compiler';
 import { variable } from '@angular/compiler/src/output/output_ast';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -19,7 +19,7 @@ const helper = new JwtHelperService();
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, OnDestroy  {
 
   @Input() menuItems: any[] = [];
 
@@ -153,5 +153,9 @@ export class SidebarComponent implements OnInit {
   onclick_search(searchCriterio: string) {
     // console.log(`searchCriterio: ${searchCriterio}`);
     this.oyenteSvc.sendCriterio(searchCriterio);
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptionRol$.unsubscribe();
   }
 }
