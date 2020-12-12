@@ -78,6 +78,8 @@ export class SidebarComponent implements OnInit {
   public logOut = () => {
     localStorage.removeItem("jwt");
     localStorage.removeItem("refreshToken");
+    localStorage.removeItem("rol");
+    localStorage.removeItem("id");
     this.sidebarSvc.getItemsAnonimo().subscribe((data: any) => {
       this.menuItems = data;
     });

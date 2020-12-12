@@ -233,3 +233,74 @@ td>i.icon-Contenedor-PC {
 .xboxcolor h2 {
     color: #107C10!important;
 }
+
+
+.section-title h2 {
+  color: #633974;
+}
+
+.section-title h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #633974;
+}
+
+.section-title h3::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #149ddd;
+  bottom: 0;
+  left: 0;
+}
+h2, h3, h5 {
+  font-weight: bold;
+  color: #633974;
+}
+
+
+.icn_acciones i{
+  display: inline-block !important;
+  margin: 5px;
+  font-size: 2.2em;
+  width: 105px;
+  text-align: center;
+}
+
+
+i.addcart {
+  color: #ea591d!important;
+  cursor: pointer;
+}
+
+i.addwish {
+  color: #e72586!important;
+  cursor: pointer;
+}
+
+.descripcion{
+  font-size: 1.2em;
+}
+
+.centerimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.black-background {
+  background: #000;
+}
+
+.text-main-color {
+  color: #633974
+}
+.text-secundary-color {
+  color: #e72586
+}

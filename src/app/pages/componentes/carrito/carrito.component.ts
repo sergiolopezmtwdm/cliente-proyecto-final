@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { CarritoService } from 'src/app/services/core/carrito.service';
 
 @Component({
   selector: 'componentes-carrito',
@@ -8,7 +9,11 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  items:any[] = [];
+
+  constructor(private modalService: NgbModal, private carritoSvc: CarritoService) {
+    this.getItems();
+  }
   closeResult: string;
 
   ngOnInit(): void {
@@ -29,5 +34,11 @@ export class CarritoComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  getItems(){
+    this.carritoSvc.getItems().subscribe((data:any[])=>{
+      this.items = data;
+    });
   }
 }

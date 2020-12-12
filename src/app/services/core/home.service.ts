@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
-const endPoint: string = 'assets/json/cards-main.json';
+// const endPoint: string = 'assets/json/cards-main.json';
+const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product/populares';
 
 @Injectable({
   providedIn: 'root'

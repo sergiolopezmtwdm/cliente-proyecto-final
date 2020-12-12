@@ -31,6 +31,10 @@ export class LoginService {
     return localStorage.getItem("rol");
   }
 
+  getId() {
+    return localStorage.getItem("id");
+  }
+
   public login(credenciales: any) {
     return this.http.post(endPoint,
       credenciales, {
@@ -47,8 +51,10 @@ export class LoginService {
     const token = (<any>response).token;
     const refreshToken = (<any>response).refreshToken;
     const rol = (<any>response).rol;
+    const id = (<any>response).id;
     localStorage.setItem("jwt", token);
     localStorage.setItem("refreshToken", refreshToken);
     localStorage.setItem("rol", rol);
+    localStorage.setItem("id", id);
   }
 }

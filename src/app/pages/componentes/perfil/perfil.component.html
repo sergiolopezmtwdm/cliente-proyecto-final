@@ -9,7 +9,7 @@
       <div class="main-body">
 
         <div class="row gutters-sm">
-          <div class="col-md-4 mb-3">
+          <!-- <div class="col-md-4 mb-3">
             <div class="card">
               <div class="card-body">
                 <div class="d-flex flex-column align-items-center text-center">
@@ -66,16 +66,17 @@
                 </li>
               </ul>
             </div>
-          </div>
-          <div class="col-md-8">
+          </div> -->
+          <!-- {{item | json}} -->
+          <div class="col-md-12">
             <div class="card mb-3">
               <div class="card-body">
                 <div class="row">
                   <div class="col-sm-3">
-                    <h6 class="mb-0">Full Name</h6>
+                    <h6 class="mb-0">Nombre completo</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
-                    Kenneth Valdez
+                    {{item.nombreCompleto}}
                   </div>
                 </div>
                 <hr>
@@ -84,11 +85,11 @@
                     <h6 class="mb-0">Email</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
-                    fip@jukmuh.al
+                    {{item.email}}
                   </div>
                 </div>
                 <hr>
-                <div class="row">
+                <!-- <div class="row">
                   <div class="col-sm-3">
                     <h6 class="mb-0">Phone</h6>
                   </div>
@@ -96,8 +97,8 @@
                     (239) 816-9029
                   </div>
                 </div>
-                <hr>
-                <div class="row">
+                <hr> -->
+                <!-- <div class="row">
                   <div class="col-sm-3">
                     <h6 class="mb-0">Mobile</h6>
                   </div>
@@ -105,73 +106,87 @@
                     (320) 380-4539
                   </div>
                 </div>
-                <hr>
-                <div class="row">
+                <hr> -->
+                <!-- <div class="row">
                   <div class="col-sm-3">
                     <h6 class="mb-0">Address</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
                     Bay Area, San Francisco, CA
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
+            <hr>
+            <!-- {{codigoItems | json}} -->
             <div class="row gutters-sm">
-              <div class="col-sm-12 mb-6">
+              <div class="section-title">
+                <h3>MIS COMPRAS</h3>
+              </div>
+              <div class="col-sm-12 mb-6" *ngFor="let item of codigoItems">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">MIS
-                        COMPRAS</i></h6>
+                    <h5><i class="icon-Contenedor-{{item.plataforma}}" title="{{item.plataforma}}"></i> {{item.titulo}}
+                    </h5>
                     <div class="row">
-                      <div class="col-sm-4" style="background-color:rgb(233, 233, 240);"><img src="assets/img/5.jpg"
-                          style="padding: 0.5em;" class="d-block w-100"></div>
-                      <div class="col-sm-4" style="background-color:rgb(233, 233, 240);"><i
-                          class="material-icons text-info mr-2">LEFT 4 DEAD</i><br>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.<br>vitae elit libero, a pharetra
-                          augue</p>
+                      <!-- style="padding: 0.5em;" class="d-block w-100"> -->
+                      <!--  -->
+                      <div class="col-sm-3" style="background-color:rgb(233, 233, 240);">
+                        <img style="height:200px;" src="{{item.imagen}}">
                       </div>
-                      <div class="col-sm-4" style="background-color:rgb(233, 233, 240);"><i
-                        class="material-icons text-info mr-2"><h2 style="text-align: right">$950.00</h2></i></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-12 mb-6">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-sm-4" style="background-color:rgb(233, 233, 240);"><img src="assets/img/4.jpg"
-                          style="padding: 0.5em;" class="d-block w-100"></div>
-                      <div class="col-sm-4" style="background-color:rgb(233, 233, 240);"><i
-                          class="material-icons text-info mr-2">CALL OF DUTY</i><br>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.<br>vitae elit libero, a pharetra
-                          augue</p>
-                      </div>
-                      <div class="col-sm-4" style="background-color:rgb(233, 233, 240);"><i
-                        class="material-icons text-info mr-2"><h2 style="text-align: right">$759.00</h2></i></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-12 mb-6">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-sm-4" style="background-color:rgb(233, 233, 240);"><img src="assets/img/2.jpg"
-                          style="padding: 0.5em;" class="d-block w-100"></div>
-                      <div class="col-sm-4" style="background-color:rgb(233, 233, 240);"><i
-                          class="material-icons text-info mr-2">CALL OF DUTY 2</i><br>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.<br>vitae elit libero, a pharetra
-                          augue</p>
-                      </div>
-                      <div class="col-sm-4" style="background-color:rgb(233, 233, 240);"><i
-                        class="material-icons text-info mr-2"><h2 style="text-align: right">$845.00</h2></i></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                      <div class="col-sm-6" style="background-color:rgb(233, 233, 240);"><br>
 
+                        <p>Código: {{item.codigo}}</p>
+                        <hr>
+                        <p>Genero: {{item.genero}}</p>
+                        <hr>
+                        <p>edicion: {{item.edicion}}</p>
+
+                      </div>
+                      <div class="col-sm-3" style="background-color:rgb(233, 233, 240);"><i
+                          class="material-icons text-info mr-2">
+                          <h2 style="text-align: right">{{item.precioVenta | currency}}</h2>
+                        </i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <hr>
+            <!-- {{wishListItems | json}} -->
+            <div class="row gutters-sm">
+              <div class="section-title">
+                <h3>MI WISHLIST</h3>
+              </div>
+              <div class="col-sm-12 mb-6" *ngFor="let item of wishListItems">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5><i class="icon-Contenedor-{{item.plataforma}}" title="{{item.plataforma}}"></i> {{item.titulo}}
+                    </h5>
+                    <div class="row">
+                      <!-- style="padding: 0.5em;" class="d-block w-100"> -->
+                      <!--  -->
+                      <div class="col-sm-3" style="background-color:rgb(233, 233, 240);">
+                        <img style="height:200px;" src="{{item.imagen}}">
+                      </div>
+                      <div class="col-sm-6" style="background-color:rgb(233, 233, 240);"><br>
+
+                        <p>Descripción: {{item.descripcion}}</p>
+                        <hr>
+                        <p>Genero: {{item.genero}}</p>
+                        <hr>
+                        <p>edicion: {{item.edicion}}</p>
+
+                      </div>
+                      <div class="col-sm-3" style="background-color:rgb(233, 233, 240);">
+                        <h2 style="text-align: right">{{item.precioVenta | currency}}</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
