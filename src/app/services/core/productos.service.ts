@@ -26,6 +26,14 @@ export class ProductosService {
    */
   getGamesBycriterio(criterio: string) {
     return this.http.get(`${endPoint}/titulo/${criterio}`);
+  }
+
+  /**
+   *
+   * @param Games by Platform
+   */
+  getGamesByplataforma(id: string) {
+    return this.http.get(`${endPoint}/plataforma/${id}`);
 
   }
 

@@ -5,17 +5,19 @@
         </div>
 
         <owl-carousel-o [options]="customOptions">
-            <ng-template carouselSlide *ngFor="let producto of gamesList">
-                <div class="boxproductos" *ngIf="producto.plataforma ==  'Xbox'">
-                    <img src="{{producto.imagen}}" alt="">
-                    <a href="">{{producto.titulo}} </a>
-                    <a href="">{{producto.plataforma}}</a>
-                    <a class="precio" href="">${{producto.precioVenta}}</a>
-                    <div class="icn_comprar">
-                        <a id="addcart" href=""><i class='bx bx-cart'></i></a>
-                        <a id="addwish" href=""><i class='bx bx-heart'></i></a>
+            <ng-template carouselSlide *ngFor="let producto of gamesList;">
+                <a [routerLink]="['/componentes/detalle', producto.id]">
+                    <div class="boxproductos" *ngIf="producto.plataforma ==  'Xbox'">
+                        <img src="{{producto.imagen}}" alt="">
+                        <a href="">{{producto.titulo}} </a>
+                        <a href="">{{producto.plataforma}}</a>
+                        <a class="precio" href="">${{producto.precioVenta}}</a>
+                        <div class="icn_comprar">
+                            <a id="addcart" href=""><i class='bx bx-cart'></i></a>
+                            <a id="addwish" href=""><i class='bx bx-heart'></i></a>
+                        </div>
                     </div>
-                </div>
+                </a>
             </ng-template>
         </owl-carousel-o>
 

@@ -210,7 +210,7 @@ td>i.icon-Contenedor-PC {
     /* padding-bottom: 2em; */
 }
 
-.play {
+.ps {
     height: auto;
     background: linear-gradient(to bottom right, #FFFFFF, #F2F2F2);
     /* background: linear-gradient(to bottom right, #FFFFFF, #CCCCCC); */
@@ -226,8 +226,11 @@ td>i.icon-Contenedor-PC {
     height: 90vh;
 }
 
-#play {
+#ps {
     height: 90vh;
+    margin-left: 300px;
+    margin-right: 100px;
+    width: 80%;
 }
 
 .xboxcolor h2 {

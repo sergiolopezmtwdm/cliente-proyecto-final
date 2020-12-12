@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Subscription } from 'rxjs';
 import { ProductosService } from 'src/app/services/core/productos.service';
@@ -10,6 +10,9 @@ import { SearchService } from 'src/app/services/core/search.service';
   styleUrls: ['./xbox.component.scss']
 })
 export class XboxComponent implements OnInit, OnDestroy {
+
+  //Salida, objetos capaces de emitir un evento(EventEmitter)
+  @Output() onClickMenu: EventEmitter<any> = new EventEmitter();
   criterio: string;
   interval: any;
   count = 0;
@@ -19,9 +22,6 @@ export class XboxComponent implements OnInit, OnDestroy {
 
   constructor(private svcSearch: SearchService, private svcProductos: ProductosService) { 
 
-    this.interval = setInterval(() => {
-      console.log(this.count++);
-    }, 1000);
 
 
     this.getAllData();
@@ -40,6 +40,18 @@ export class XboxComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+  }
+
+  onclick_menu(index: number, item: any){
+    //console.log('El indice seleccionado en el hijo es: ', index);
+    //console.log('El item seleccionado en hijo es: ', item);
+    
+    //Regresar al componente papá (app.component), pueda ser escuchado por el componente papá
+    this.onClickMenu.emit({
+      index,
+      name: item.title
+    });
+
   }
 
 
