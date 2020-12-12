@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { OyenteService } from 'src/app/services/core/oyente.service';
 import { ProductosService } from 'src/app/services/core/productos.service';
-import { SearchService } from 'src/app/services/core/search.service';
 import { CarritoService } from 'src/app/services/core/carrito.service';
 
 @Component({
@@ -17,12 +17,11 @@ export class AllgamesComponent implements OnInit, OnDestroy {
   gamesList: any[] = [];
   subscription$: Subscription;
 
-  constructor(private svcSearch: SearchService, private svcProductos: ProductosService, private carritoSvc: CarritoService) {
+  constructor(private oyenteSvc: OyenteService, private svcProductos: ProductosService, private carritoSvc: CarritoService) {
 
 
     this.getAllData();
-
-    this.subscription$ = this.svcSearch.onListenCriterio().subscribe((criterio: string) => {
+    this.subscription$ = this.oyenteSvc.onListenCriterio().subscribe((criterio: string) => {
 
       if (criterio != '') {
         this.searchCriterio(criterio);
@@ -30,7 +29,6 @@ export class AllgamesComponent implements OnInit, OnDestroy {
         this.getAllData();
       }
       console.log('La subscripción es: ', criterio);
-
     });
 
     //this.subscription$ = svcSearch.onListenCriterio().subscribe((criterio: string) =>{

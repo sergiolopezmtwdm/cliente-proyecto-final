@@ -22,7 +22,7 @@
       </div>
     </div>
     <nav class="nav-menu">
-      <a routerLink="customers">Customer</a>
+      <!-- <a routerLink="customers">Customer</a> -->
 
       <!-- <strong><span style="color:red" *ngIf="isUserAuthenticated()">Logeado</span></strong> -->
       <ul>
@@ -67,7 +67,7 @@
         <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
-            <input type="email" id="email" name="email" ngModel class="form-control" placeholder="User Name" required
+            <input type="email" id="email" name="email" ngModel class="form-control" placeholder="email" required
               autofocus>
             <small id="emailHelp" class="form-text text-muted">We'll never share your information with
               anyone
@@ -76,7 +76,7 @@
           <div class="form-group">
             <label for="exampleInputPassword1">Contraseña</label>
             <input type="password" id="Contrasenia" name="Contrasenia" ngModel class="form-control"
-              placeholder="Password" required>
+              placeholder="contraseña" required>
           </div>
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -85,7 +85,7 @@
           <button type="submit" class="btn btn-primary w3-green btn">Iniciar
             Sesión</button>
         </form><br>
-        <a class="link forget-password">Olvidaste la contraseña?</a>
+        <!-- <a class="link forget-password">Olvidaste la contraseña?</a> -->
         <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button> -->
       </div>
 

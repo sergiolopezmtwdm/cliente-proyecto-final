@@ -4,6 +4,9 @@ import { NgForm } from '@angular/forms';
 
 //const endPoint: string = 'assets/json/productos.json';
 const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product';
+// const endPoint3: string = "https://apimtwdmfinalproject.azurewebsites.net/api/product/byids";
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +19,16 @@ export class ProductosService {
     return this.http.get(endPoint);
   }
 
-  getAllGames(){
+  getProductosByIdList(carrito: any[]) {
+    return this.http.post(`${endPoint}/byids`,
+      carrito, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    })
+  }
+
+  getAllGames() {
     return this.http.get(`${endPoint}`);
   }
 
@@ -37,13 +49,13 @@ export class ProductosService {
 
   }
 
-  public getProductoById(id: string){
+  public getProductoById(id: string) {
     // return this.http.get(`${endPoint}/${id}`);
     return this.http.get(`${endPoint}/${id}`);
     // return this.http.get("assets/json/producto.json");
   }
 
-  public updateProduct = (form: NgForm, id:number) => {
+  public updateProduct = (form: NgForm, id: number) => {
     form.value.id = id;
     form.value.costo = parseInt(form.value.costo);
     form.value.precioVenta = parseInt(form.value.precioVenta);
@@ -56,7 +68,7 @@ export class ProductosService {
     const formulario = JSON.stringify(form.value);
     console.log("formulario: ", formulario);
     this.http.post(`${endPoint}/update`,
-    formulario, {
+      formulario, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })

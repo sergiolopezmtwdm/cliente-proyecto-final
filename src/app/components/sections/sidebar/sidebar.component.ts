@@ -6,9 +6,10 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subscription } from 'rxjs';
 import { ClientesService } from 'src/app/services/core/clientes.service';
 import { LoginService } from 'src/app/services/core/login.service';
-import { SearchService } from 'src/app/services/core/search.service';
+import { OyenteService } from 'src/app/services/core/oyente.service';
 import { SidebarService } from 'src/app/services/core/sidebar.service';
 
 const helper = new JwtHelperService();
@@ -26,7 +27,22 @@ export class SidebarComponent implements OnInit {
   modalReference: any;
   closeResult: string;
 
-  constructor(private modalService: NgbModal, private router: Router, private http: HttpClient, private loginSvc: LoginService, private sidebarSvc: SidebarService, private searchSvc: SearchService, private clienteSvc: ClientesService) { }
+  subscriptionRol$: Subscription;
+
+  constructor(private modalService: NgbModal, private router: Router, private http: HttpClient, private loginSvc: LoginService, private sidebarSvc: SidebarService, private oyenteSvc: OyenteService, private clienteSvc: ClientesService) {
+    this.subscriptionRol$ = this.oyenteSvc.onListenRol().subscribe((rol: string) => {
+      // if (criterio != '') {
+      //   this.searchCriterio(criterio);
+      // } else {
+      //   this.getAllData();
+      // }
+      console.log('La subscripción es: ', rol);
+      this.sidebarSvc.getItemsAutentificado(rol).subscribe((data: any[]) => {
+        console.log("inicializando menú: ", JSON.stringify(data));
+        this.menuItems = data;
+      });
+    });
+  }
 
   isUserAuthenticated() {
     // const token: string = localStorage.getItem("jwt");
@@ -79,6 +95,7 @@ export class SidebarComponent implements OnInit {
     localStorage.removeItem("jwt");
     localStorage.removeItem("refreshToken");
     localStorage.removeItem("rol");
+    // this.oyenteSvc.sendRol("anonimo")
     localStorage.removeItem("id");
     this.sidebarSvc.getItemsAnonimo().subscribe((data: any) => {
       this.menuItems = data;
@@ -92,11 +109,7 @@ export class SidebarComponent implements OnInit {
     console.log("credenciales: ", credentials);
     this.loginSvc.login(credentials).subscribe(async response => {
       await this.loginSvc.setlocalStorage(response);
-      // this.sidebarSvc.getItemsAutentificado().subscribe((data:any[]) => {
-      this.sidebarSvc.getItemsAutentificado().subscribe((data:any[]) => {
-        console.log("inicializando menú: ",JSON.stringify(data));
-        this.menuItems = data;
-      });
+
       alert("has iniciado sesión correctamente " + (<any>response).nombreCompleto);
       // console.log("token: ",(<any>response).token);
       // this.sidebarSvc.getItems().subscribe((data:any)=>{
@@ -139,6 +152,6 @@ export class SidebarComponent implements OnInit {
 
   onclick_search(searchCriterio: string) {
     // console.log(`searchCriterio: ${searchCriterio}`);
-    this.searchSvc.sendCriterio(searchCriterio);
+    this.oyenteSvc.sendCriterio(searchCriterio);
   }
 }
