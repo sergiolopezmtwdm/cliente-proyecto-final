@@ -54,7 +54,7 @@ export class CarritoService {
     const datosDeEnvio = JSON.stringify(addWishItem);
     console.log("formulario: ", datosDeEnvio);
 
-    this.http.post(`${endPoint}`,
+    this.http.post(`${endPoint2}`,
       datosDeEnvio, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
