@@ -38,4 +38,12 @@ export class AppComponent implements OnInit {
     }
 
   }
+
+  listenChildMenuEvent(eventArgs: any){
+    console.log('Los datos emitidos por el componente hijo son: ', eventArgs);
+    console.log('El indice seleccionado en el componente pap+a es: ', eventArgs.index);
+      console.log('El item seleccionado en el componente hijo es: ', eventArgs.name);
+  }
+
+
 }

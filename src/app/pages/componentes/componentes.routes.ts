@@ -41,7 +41,7 @@ const routes: Routes = [
         path: 'perfil', component: PerfilComponent
       },
       {
-        path: 'detalle', component: DetalleComponent
+        path: 'detalle/:id', component: DetalleComponent
       },
       {
         path: 'allgames', component: AllgamesComponent

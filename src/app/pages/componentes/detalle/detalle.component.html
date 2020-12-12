@@ -1,112 +1,70 @@
 <section id="about" class="about">
-  <div class="container boxdatosjuegos">
-      <div class="row">
-          <div class="col-sm-6 boxdescripcion">
+    <div class="container boxdatosjuegos">
+        <div class="row">
+            <div class="col-sm-6 boxdescripcion">
 
-              <h2>Assassin's Creed: Valhalla</h2>
-              <a>XBOX</a>
-              <p>Conviértete en Eivor, un poderoso saqueador vikingo y lidera a tu clan desde las inclementes costas
-                  de Noruega a un nuevo hogar en medio de las exuberantes tierras de cultivo de la Inglaterra del
-                  siglo IX. Explora un hermoso y misterioso mundo abierto donde te enfrentarás a brutales enemigos,
-                  saquearás fortalezas, construirás el nuevo asentamiento de tu clan y forjarás alianzas para
-                  conseguir la gloria y obtener un lugar en el Valhalla.</p>
+                <h2>{{producto.producto.titulo}} </h2>
+                <a>{{producto.producto.plataforma}}</a>
+                <p>{{producto.producto.descripcion}}</p>
 
-          </div>
-          <div class="col-sm-6">
-              <div class="shadow p-1 mb-3 bg-white rounded boximgdetalle">
-                  <img src="../../assets/img/imagenes_AssassinsCredd/img1.jpg" class="img-fluid" alt="Responsive image">
-              </div>
-              <div class="boxiconosdescrip">
-                  <span></span>
-                  <a id="idprecio">$1200.00</a>
-                  <button type="button" class="btn btn-outline-success">Comprar</button>
-              </div>
-          </div>
-      </div>
-  </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="shadow p-1 mb-3 bg-white rounded boximgdetalle">
+                    <img src="{{producto.producto.imagen2}}" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="boxiconosdescrip">
+                    <span></span>
+                    <a id="idprecio">${{producto.producto.precioVenta}}.00</a>
+                    <button type="button" class="btn btn-outline-success">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <div class="navdescripcionjuego">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="trailer-tab" data-toggle="tab" href="#trailer" role="tab"
-                  aria-controls="trailer" aria-selected="true">Trailer</a>
-          </li>
-          <li class="nav-item" role="presentation">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                  aria-controls="profile" aria-selected="false">Imagenes</a>
-          </li>
-          <li class="nav-item" role="presentation">
-              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                  aria-controls="contact" aria-selected="false">Reseña</a>
-          </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="trailer" role="tabpanel" aria-labelledby="trailer-tab">
-              <div class="boximagenesnav">
-                  <iframe width="100%" height="600px" src="https://www.youtube.com/embed/eARa4PZn_aE" frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-              </div>
-          </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <div class="boximagenesnav">
-                  <div class="card-columns">
-                      <div class="card">
-                          <div class="shadow p-1  bg-white rounded boximgdetalle">
-                              <img src="../../assets/img/imagenes_AssassinsCredd/img1.jpg" class="img-fluid"
-                                  alt="Responsive image">
-                          </div>
-                      </div>
-                      <div class="card">
-                          <div c class="shadow p-1  bg-white rounded boximgdetalle">
-                              <img src="../../assets/img/imagenes_AssassinsCredd/img2.jpg" class="img-fluid"
-                                  alt="Responsive image">
-                          </div>
-                      </div>
-                      <div class="card">
-                          <div class="shadow p-1  bg-white rounded boximgdetalle">
-                              <img src="../../assets/img/imagenes_AssassinsCredd/img3.jpg" class="img-fluid"
-                                  alt="Responsive image">
-                          </div>
-                      </div>
-                      <div class="card">
-                          <div class="shadow p-1  bg-white rounded boximgdetalle">
-                              <img src="../../assets/img/imagenes_AssassinsCredd/img4.jpg" class="img-fluid"
-                                  alt="Responsive image">
-                          </div>
-                      </div>
-                      <div class="card">
-                          <div class="shadow p-1  bg-white rounded boximgdetalle">
-                              <img src="../../assets/img/imagenes_AssassinsCredd/img5.jpg" class="img-fluid"
-                                  alt="Responsive image">
-                          </div>
-                      </div>
-                      <div class="card">
-                          <div class="shadow p-1  bg-white rounded boximgdetalle">
-                              <img src="../../assets/img/imagenes_AssassinsCredd/img6.jpg" class="img-fluid"
-                                  alt="Responsive image">
-                          </div>
-                      </div>
-                  </div>
-              </div>
+    <div class="navdescripcionjuego">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link " id="trailer-tab" data-toggle="tab" href="#trailer" role="tab" aria-controls="trailer" aria-selected="true">Trailer</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Imagenes</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Reseña</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="trailer" role="tabpanel" aria-labelledby="trailer-tab">
+                <div class="boximagenesnav">
+                    <iframe width="100%" height="600px" src="{{producto.producto.urlVideo}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="boximagenesnav">
+                    <div class="card-columns">
+                        <div class="card">
+                            <div class="shadow p-1  bg-white rounded boximgdetalle">
+                                <img src="{{producto.producto.imagen2}}" class="img-fluid" alt="Responsive image">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div c class="shadow p-1  bg-white rounded boximgdetalle">
+                                <img src="{{producto.producto.imagen3}}" class="img-fluid" alt="Responsive image">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 
 
-          </div>
-          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-              <div class="boximagenesnav">
-                  <h2>Assassin's Creed: Valhalla</h2>
-                  <p> Conviértete en Eivor, un poderoso saqueador vikingo y lidera a tu clan desde las inclementes
-                      costas de Noruega a un nuevo hogar en medio de las exuberantes tierras de cultivo de la
-                      Inglaterra del siglo IX. Explora un hermoso y misterioso mundo abierto donde te enfrentarás a
-                      brutales enemigos, saquearás fortalezas, construirás el nuevo asentamiento de tu clan y forjarás
-                      alianzas para conseguir la gloria y obtener un lugar en el Valhalla.
-                      Inglaterra, en la época de los vikingos, es una nación fracturada llena de amos mezquinos y
-                      reinos en guerra. Debajo de todo el caos yace una tierra salvaje y llena de abundancia que
-                      espera a un nuevo conquistador. ¿Serás tú?
-                  </p>
-              </div>
-          </div>
-      </div>
-  </div>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="boximagenesnav">
+                    <h2>{{producto.producto.titulo}}</h2>
+                    <p> {{producto.producto.descripcion}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </section>
