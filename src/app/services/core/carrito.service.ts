@@ -3,9 +3,15 @@ import { Injectable } from '@angular/core';
 import { LoginService } from './login.service';
 
 // const endPoint: string = 'http://localhost:3000/v1/carrito/getAll/1/5/2';
-const endPoint: string = 'http://localhost:3001/v1/carrito/';
-const endPoint2: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product/wishlist/';
-const endPoint3: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/order/cart';
+// const endPoint: string = 'http://localhost:3001/v1/carrito/';
+const endPoint: string = 'http://172.17.0.5/v1/carrito/';
+// const endPoint2: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product/wishlist/';
+// const endPoint3: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/order/cart';
+
+// const endPoint3: string = 'https://localhost:44300/api/order/cart';
+// const endPoint2: string = 'https://localhost:44300/api/product/wishlist/';
+const endPoint3: string = 'https://172.17.0.4/api/order/cart';
+const endPoint2: string = 'https://172.17.0.4/api/product/wishlist/';
 
 @Injectable({
   providedIn: 'root'

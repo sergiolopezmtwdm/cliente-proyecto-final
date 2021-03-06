@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 //const endPoint: string = 'assets/json/productos.json';
-const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product';
+// const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product';
+// const endPoint: string = 'https://localhost:44300/api/product';
+const endPoint: string = 'https://172.17.0.4/api/product';
 // const endPoint3: string = "https://apimtwdmfinalproject.azurewebsites.net/api/product/byids";
 
 
@@ -22,7 +24,7 @@ export class ProductosService {
       campo: 'imagen',
       ruta: name
     };
-    
+
     return this.http.post(`${endPoint}/image/update`,
     item, {
       headers: new HttpHeaders({

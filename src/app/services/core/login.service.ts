@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { OyenteService } from './oyente.service';
 
-const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/login';
+// const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/login';
+// const endPoint: string = 'https://localhost:44300/api/login';
+const endPoint: string = 'https://172.17.0.4/api/login';
 
 @Injectable({
   providedIn: 'root'
