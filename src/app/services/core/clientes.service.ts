@@ -9,9 +9,9 @@ import { Injectable } from '@angular/core';
 // const endPointWishlist: string = 'https://localhost:44300/api/product/wishlist/';
 // const endPointCode: string = 'https://localhost:44300/api/code/';
 
-const endPoint: string = 'https://172.17.0.4/api/user';
-const endPointWishlist: string = 'https://172.17.0.4/api/product/wishlist/';
-const endPointCode: string = 'https://172.17.0.4/api/code/';
+const endPoint: string = 'http://192.168.3.17:44300/api/user';
+const endPointWishlist: string = 'http://192.168.3.17:44300/api/product/wishlist/';
+const endPointCode: string = 'http://192.168.3.17:44300/api/code/';
 
 
 @Injectable({

@@ -5,7 +5,7 @@ import { NgForm } from '@angular/forms';
 // const endPoint: string = 'assets/json/orders.json';
 // const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/order';
 // const endPoint: string = 'https://localhost:44300/api/order';
-const endPoint: string = 'https://172.17.0.4/api/order';
+const endPoint: string = 'http://192.168.3.17:44300/api/order';
 
 @Injectable({
   providedIn: 'root'
