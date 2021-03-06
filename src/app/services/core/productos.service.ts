@@ -5,7 +5,7 @@ import { NgForm } from '@angular/forms';
 //const endPoint: string = 'assets/json/productos.json';
 // const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/product';
 // const endPoint: string = 'https://localhost:44300/api/product';
-const endPoint: string = 'http://192.168.3.17:44300/api/product';
+const endPoint: string = 'http://apinetcore.midominio.com/api/product';
 // const endPoint3: string = "https://apimtwdmfinalproject.azurewebsites.net/api/product/byids";
 
 

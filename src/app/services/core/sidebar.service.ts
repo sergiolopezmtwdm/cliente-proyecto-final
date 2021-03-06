@@ -5,7 +5,7 @@ import { LoginService } from './login.service';
 // const endPoint: string = 'assets/json/menu.json';
 // const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/menu';
 // const endPoint: string = 'https://localhost:44300/api/menu';
-const endPoint: string = 'http://192.168.3.17:44300/api/menu';
+const endPoint: string = 'http://apinetcore.midominio.com/api/menu';
 const endPoint2: string = 'assets/json/menuAuthenticated.json';
 
 @Injectable({

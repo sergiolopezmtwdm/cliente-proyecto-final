@@ -5,7 +5,7 @@ import { OyenteService } from './oyente.service';
 
 // const endPoint: string = 'https://apimtwdmfinalproject.azurewebsites.net/api/login';
 // const endPoint: string = 'https://localhost:44300/api/login';
-const endPoint: string = 'http://192.168.3.17:44300/api/login';
+const endPoint: string = 'http://apinetcore.midominio.com/api/login';
 
 @Injectable({
   providedIn: 'root'
